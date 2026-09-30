@@ -21,7 +21,11 @@ jobs:
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
+      # Latest main, not the commit the run was triggered on, so a queued run
+      # doesn't start from a stale base.
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -34,7 +38,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/canvas.json
-          git diff --cached --quiet || (git commit -m "Sync Canvas feed" && git push)
+          git diff --cached --quiet && exit 0
+          git commit -m "Sync Canvas feed"
+          # If main moved meanwhile, replay on top of it; the fresh feed wins on conflict.
+          for i in 1 2 3; do
+            git push && exit 0
+            git pull --rebase -X theirs origin main
+          done
+          exit 1
 
   deploy:
     needs: sync
