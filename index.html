@@ -48,21 +48,43 @@ section{display:flex;flex-direction:column;gap:12px}
 .nx .lbl{font-weight:600}
 .overdue{font-size:13px;color:var(--crit)}
 
-/* course cards */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.card .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-.card .code{font-family:var(--display);font-weight:800;font-size:18px;color:var(--cc)}
-.card .units{font-size:12px;color:var(--muted)}
-.card .name{font-size:12px;color:var(--muted);margin-top:-8px}
-.bar{display:flex;height:22px;border-radius:5px;overflow:hidden;gap:2px}
-.bar span{display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--mono);color:#fff;background:var(--cc);white-space:nowrap;overflow:hidden;min-width:0}
-.bar span:nth-child(2){opacity:.8}.bar span:nth-child(3){opacity:.62}.bar span:nth-child(4){opacity:.46}.bar span:nth-child(5){opacity:.34}
-.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:13px;margin:0}
-.kv dt{color:var(--muted);white-space:nowrap}
+/* course cards: 桌面 3+2，平板 2 列，手机 1 列 */
+.cards{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.card{grid-column:span 2;background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--cc);border-radius:12px;padding:20px 22px 22px;display:flex;flex-direction:column;gap:18px;min-width:0;font-size:15px;line-height:1.6}
+.card:nth-child(n+4){grid-column:span 3}
+@media (max-width:1100px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card,.card:nth-child(n+4){grid-column:span 1}
+  .card:last-child:nth-child(odd){grid-column:span 2}
+}
+@media (max-width:680px){
+  .cards{grid-template-columns:minmax(0,1fr)}
+  .card,.card:nth-child(n+4),.card:last-child:nth-child(odd){grid-column:auto}
+  .card{padding:18px 16px 20px}
+}
+.ch{display:flex;flex-direction:column;gap:2px}
+.ch .row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px 12px}
+.card .code{font-family:var(--display);font-weight:700;font-size:24px;line-height:1.25;color:var(--cc)}
+.card .units{font-size:13px;color:var(--muted)}
+.card .name{font-size:14px;color:var(--muted)}
+.sl{font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.exams{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.exam{background:var(--soft);border-radius:8px;padding:10px 14px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.exam .el{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted)}
+.exam .el b{color:var(--cc);font-weight:600;font-variant-numeric:tabular-nums}
+.exam .ed{font-size:18px;font-weight:600;line-height:1.35;font-variant-numeric:tabular-nums}
+.exam .et{font-size:15px;font-weight:500;font-variant-numeric:tabular-nums}
+.exam .ex{margin-top:2px;font-size:13px;color:var(--muted);line-height:1.5}
+.exam.none .ed{color:var(--muted);font-weight:500}
+.weights{display:flex;flex-direction:column;gap:7px}
+.wrow{display:grid;grid-template-columns:6.5em minmax(0,1fr) 3em;align-items:center;gap:12px;font-size:14.5px}
+.wrow .wt{height:8px;border-radius:4px;background:var(--soft);overflow:hidden}
+.wrow .wt i{display:block;height:100%;background:var(--cc);border-radius:4px}
+.wrow .wp{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.kv{display:grid;grid-template-columns:4.5em minmax(0,1fr);gap:8px 14px;margin:0;font-size:14.5px;line-height:1.6}
+.kv dt{color:var(--muted)}
 .kv dd{margin:0;min-width:0}
-.lab{font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px}
-.tag{display:inline-block;font-size:11px;padding:0 6px;border-radius:4px;background:var(--soft);color:var(--muted);margin-left:4px}
+.cnote{margin:0;padding-top:14px;border-top:1px solid var(--line);font-size:13.5px;line-height:1.6;color:var(--muted)}
 
 /* week grid */
 .filters{display:flex;flex-wrap:wrap;gap:6px}
@@ -136,7 +158,7 @@ tr.now + tr.topics td{background:color-mix(in srgb,var(--accent) 6%,var(--soft))
   </section>
 
   <section>
-    <div class="sechead"><h2>各课占比与考试</h2><span class="eyebrow">权重条按 syllabus 原数</span></div>
+    <div class="sechead"><h2>各课占比与考试</h2><span class="eyebrow">占比按 syllabus 原数</span></div>
     <div class="cards" id="cards"></div>
   </section>
 
@@ -184,26 +206,31 @@ tr.now + tr.topics td{background:color-mix(in srgb,var(--accent) 6%,var(--soft))
 
 <script>
 const COURSES = [
-  {k:"105", code:"Math 105A", name:"Numerical Analysis I · Sungha Yoon", units:"4u + 105LA 1u", cc:"--c105",
-   weights:[["Quiz",25],["Mid",25],["Final",50]],
-   kv:[["Lec","MWF 9:00 · RH 104"],["Dis","TuTh 11:00 · DBH 1500（quiz 在周四）"],["HW","布置但不收，出题会参考"],["Quiz","6 次，drop 最低 → 每次 ≈5%"],["Midterm","Mon 10/26 9:00 课上 · 25%"],["Final","Wed 12/9 8:00–10:00 · 50%"]],
-   lab:"105LA Lab：MW 14:00 · ALP 3600 · MATLAB · Final Fri 12/11 13:30–15:30 · 评分未知"},
-  {k:"121", code:"Math 121A", name:"Linear Algebra I · Alexandra Florea", units:"4u", cc:"--c121",
-   weights:[["HW",5],["Quiz",20],["Mid",35],["Final",40]],
-   kv:[["Lec","MWF 11:00 · SH 134"],["Dis","TuTh 15:00 · RH 114（quiz 在周二）"],["HW","每周五 12:00 Gradescope，drop 最低，迟交 1 周内 −20%"],["Quiz","周二，考上周五 HW，drop 最低，首次 10/6"],["Midterm","Fri 10/30 11:00 · SH 134 · 35% · 有座位表"],["Final","Fri 12/11 8:00–10:00 · 40%"]],
-   lab:"教材 Friedberg 5e，覆盖 §1.1–5.2"},
-  {k:"140", code:"Math 140A", name:"Elementary Analysis I · Yi Lai", units:"4u", cc:"--c140",
-   weights:[["HW",10],["Mid",35],["Final",55]],
-   kv:[["Lec","MWF 12:00 · SSL 228（44798）"],["Dis","TuTh 13:00 · MSTB 118"],["HW","周四 discussion 交纸质，drop 最低，不收迟交"],["Midterm","Fri 10/30 12:00 课上 · 35% · 考到 10/23"],["Final","Mon 12/7 13:30–15:30 · 55%"],["规则","缺考期中有证明 → 权重并入 final"]],
-   lab:"教材 Ross《Elementary Analysis》2e，§1–18"},
-  {k:"7c", code:"Physics 7C", name:"Classical Physics · Ryan Keeley", units:"4u + 7LC 1u", cc:"--c7c",
-   weights:[["HW",20],["Part.",10],["RQ",10],["Mid",20],["Final",40]],
-   kv:[["Lec","TuTh 8:00–9:20 · SSLH 100"],["Dis","Wed 15:00 · RH 108（reading quiz）"],["HW","每周一 23:59，math-physics-learning app，mastery 做对 20 题"],["参与","课上 clicker / think-pair-share 记考勤"],["Midterm","Tue 11/3 8:00–9:30 课上 · 20%"],["Final","Tue 12/8 8:00–10:00 · 40%"]],
-   lab:"7LC Lab：Fri 13:00–14:50 · MSTB 125 · 评分未知 ｜ 分数线：A ≥85，B ≥75（只降不升）"},
-  {k:"swe", code:"SWE 43", name:"Intro to Software Engineering · Jess Gillespie", units:"4u", cc:"--cswe",
-   weights:[["Quiz",60],["HW",30],["Attend",10]],
-   kv:[["Lec","TuTh 18:30–19:50 · ALP 1300"],["Dis","Fri 10:00 · PCB 1200（quiz 在这做）"],["HW","3 个，各 10%：需求文档 / Git / 测试计划"],["Quiz","10 次，drop 最低 → 每次 ≈6.7%，周五 15:00 前"],["Midterm","无"],["Final","Quiz 10 · Tue 12/8，时间待定"]],
-   lab:"不收迟交 · 课程评价 +0.5% extra credit"},
+  {k:"105", code:"Math 105A", name:"Numerical Analysis I · Sungha Yoon", units:"4 units + 105LA 1 unit", cc:"--c105",
+   weights:[["Quiz",25],["Midterm",25],["Final",50]],
+   exams:[{l:"期中",w:25,d:"Mon 10/26",t:"9:00–9:50",x:"课上，RH 104"},{l:"期末",w:50,d:"Wed 12/9",t:"8:00–10:00",x:"闭卷，带学生证"}],
+   rows:[["上课","MWF 9:00–9:50 · RH 104"],["讨论课","TuTh 11:00 · DBH 1500，quiz 在周四"],["作业","布置但不收，考试会参考"],["Quiz","共 6 次，去掉最低 1 次，每次约 5%"]],
+   note:"105LA Lab：MW 14:00 · ALP 3600，用 MATLAB。期末 Fri 12/11 13:30–15:30，评分方式未知。"},
+  {k:"121", code:"Math 121A", name:"Linear Algebra I · Alexandra Florea", units:"4 units", cc:"--c121",
+   weights:[["作业",5],["Quiz",20],["Midterm",35],["Final",40]],
+   exams:[{l:"期中",w:35,d:"Fri 10/30",t:"11:00–11:50",x:"SH 134，有座位表，提前 20 分钟到"},{l:"期末",w:40,d:"Fri 12/11",t:"8:00–10:00",x:"有座位表"}],
+   rows:[["上课","MWF 11:00 · SH 134"],["讨论课","TuTh 15:00 · RH 114，quiz 在周二"],["作业","每周五 12:00 交 Gradescope，去掉最低 1 次；迟交 1 周内扣 20%"],["Quiz","周二考上周五的作业，去掉最低 1 次，第一次 10/6"]],
+   note:"教材 Friedberg《Linear Algebra》第 5 版，讲 §1.1–5.2。"},
+  {k:"140", code:"Math 140A", name:"Elementary Analysis I · Yi Lai", units:"4 units", cc:"--c140",
+   weights:[["作业",10],["Midterm",35],["Final",55]],
+   exams:[{l:"期中",w:35,d:"Fri 10/30",t:"12:00–12:50",x:"SSL 228，考到 10/23 的内容"},{l:"期末",w:55,d:"Mon 12/7",t:"13:30–15:30",x:"考场待公布"}],
+   rows:[["上课","MWF 12:00 · SSL 228（44798）"],["讨论课","TuTh 13:00 · MSTB 118"],["作业","去掉最低 1 次，不收迟交。HW1 在 Canvas 上改为周一 12:00 交 Gradescope"],["缺考","有证明的缺考，期中权重并入期末"]],
+   note:"教材 Ross《Elementary Analysis》第 2 版，§1–18。"},
+  {k:"7c", code:"Physics 7C", name:"Classical Physics · Ryan Keeley", units:"4 units + 7LC 1 unit", cc:"--c7c",
+   weights:[["作业",20],["课堂参与",10],["Reading quiz",10],["Midterm",20],["Final",40]],
+   exams:[{l:"期中",w:20,d:"Tue 11/3",t:"8:00–9:30",x:"课上，SSLH 100"},{l:"期末",w:40,d:"Tue 12/8",t:"8:00–10:00",x:"考场待公布"}],
+   rows:[["上课","TuTh 8:00–9:20 · SSLH 100"],["讨论课","Wed 15:00 · RH 108，做 reading quiz"],["作业","每周一 23:59，在 math-physics-learning app 上做对 20 题"],["参与","课上 clicker 题，记考勤"],["分数线","A ≥ 85，B ≥ 75，只会往下调"]],
+   note:"7LC Lab：Fri 13:00–14:50 · MSTB 125，评分方式未知。"},
+  {k:"swe", code:"SWE 43", name:"Intro to Software Engineering · Jess Gillespie", units:"4 units", cc:"--cswe",
+   weights:[["Quiz",60],["作业",30],["出勤",10]],
+   exams:[{l:"期中",d:"没有期中",none:true},{l:"期末",w:null,d:"Tue 12/8",t:"时间待定",x:"就是 Quiz 10，按一次 quiz 计分"}],
+   rows:[["上课","TuTh 18:30–19:50 · ALP 1300"],["讨论课","Fri 10:00 · PCB 1200，quiz 在这做"],["作业","3 个，各 10%：需求文档、Git、测试计划。不收迟交"],["Quiz","共 10 次，去掉最低 1 次，每次约 6.7%。周五做，限时 35 分钟，禁用 AI"]],
+   note:"填 EEE 课程评价加 0.5% extra credit。"},
 ];
 const CMAP = Object.fromEntries(COURSES.map(c=>[c.k,c]));
 
@@ -296,11 +323,11 @@ function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;","
 function renderCards(){
   document.getElementById("cards").innerHTML=COURSES.map(c=>`
    <article class="card" style="--cc:var(${c.cc})">
-     <div class="top"><span class="code">${c.code}</span><span class="units">${c.units}</span></div>
-     <div class="name">${esc(c.name)}</div>
-     <div class="bar" role="img" aria-label="${c.weights.map(w=>w[0]+" "+w[1]+"%").join(", ")}">${c.weights.map(([n,p])=>`<span style="flex:${p}" title="${n} ${p}%">${p>=10?n+" "+p:p}</span>`).join("")}</div>
-     <dl class="kv">${c.kv.map(([a,b])=>`<dt>${a}</dt><dd>${esc(b)}</dd>`).join("")}</dl>
-     <div class="lab">${esc(c.lab)}</div>
+     <div class="ch"><div class="row"><span class="code">${c.code}</span><span class="units">${c.units}</span></div><div class="name">${esc(c.name)}</div></div>
+     <div class="exams">${c.exams.map(e=>`<div class="exam${e.none?" none":""}"><div class="el"><span>${e.l}</span>${e.w?`<b>${e.w}%</b>`:""}</div><div class="ed">${esc(e.d)}</div>${e.t?`<div class="et">${esc(e.t)}</div>`:""}${e.x?`<div class="ex">${esc(e.x)}</div>`:""}</div>`).join("")}</div>
+     <div><div class="sl">成绩构成</div><div class="weights">${c.weights.map(([n,p])=>`<div class="wrow"><span>${n}</span><span class="wt"><i style="width:${p}%"></i></span><span class="wp">${p}%</span></div>`).join("")}</div></div>
+     <dl class="kv">${c.rows.map(([a,b])=>`<dt>${a}</dt><dd>${esc(b)}</dd>`).join("")}</dl>
+     <p class="cnote">${esc(c.note)}</p>
    </article>`).join("");
 }
 function renderFilters(){
