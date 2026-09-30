@@ -1,0 +1,56 @@
+name: Sync Canvas and deploy
+
+on:
+  schedule:
+    - cron: "0 13 * * *"   # 06:00 PDT (05:00 PST after Nov 1)
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch Canvas feed
+        env:
+          CANVAS_FEED_URL: ${{ secrets.CANVAS_FEED_URL }}
+        run: python scripts/sync_canvas.py
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/canvas.json
+          git diff --cached --quiet || (git commit -m "Sync Canvas feed" && git push)
+
+  deploy:
+    needs: sync
+    if: always() && (needs.sync.result == 'success' || needs.sync.result == 'skipped')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Collect site files
+        run: mkdir _site && cp -r index.html data _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

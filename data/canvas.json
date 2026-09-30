@@ -1,0 +1,113 @@
+{
+ "fetched_at": "2026-09-29T19:00-07:00",
+ "events": [
+  {
+   "uid": "event-assignment-1913605",
+   "d": "2026-09-24",
+   "t": null,
+   "c": "swe",
+   "k": "other",
+   "n": null,
+   "title": "Lecture 1: Who are you?"
+  },
+  {
+   "uid": "event-assignment-1900497",
+   "d": "2026-09-28",
+   "t": null,
+   "c": "140",
+   "k": "read",
+   "n": null,
+   "title": "Read Sec. 1"
+  },
+  {
+   "uid": "event-assignment-1913617",
+   "d": "2026-09-29",
+   "t": "18:00",
+   "c": "swe",
+   "k": "read",
+   "n": null,
+   "title": "Parnas-MultiPerson"
+  },
+  {
+   "uid": "event-assignment-1900498",
+   "d": "2026-09-30",
+   "t": null,
+   "c": "140",
+   "k": "read",
+   "n": null,
+   "title": "Read Sec. 2"
+  },
+  {
+   "uid": "event-assignment-1913616",
+   "d": "2026-10-01",
+   "t": null,
+   "c": "swe",
+   "k": "read",
+   "n": null,
+   "title": "No Silver Bullet - Article Link"
+  },
+  {
+   "uid": "event-assignment-1932591",
+   "d": "2026-10-02",
+   "t": "12:00",
+   "c": "121",
+   "k": "hw",
+   "n": 1,
+   "title": "Homework 1"
+  },
+  {
+   "uid": "event-assignment-1913574",
+   "d": "2026-10-02",
+   "t": "16:00",
+   "c": "swe",
+   "k": "quiz",
+   "n": 1,
+   "title": "QUIZ 1 - What is SE"
+  },
+  {
+   "uid": "event-assignment-1900499",
+   "d": "2026-10-02",
+   "t": null,
+   "c": "140",
+   "k": "read",
+   "n": null,
+   "title": "Read Sec. 3"
+  },
+  {
+   "uid": "event-assignment-1899645",
+   "d": "2026-10-03",
+   "t": null,
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Classwork 1 Upload (group tutorial here)"
+  },
+  {
+   "uid": "event-assignment-1901461",
+   "d": "2026-10-05",
+   "t": "12:00",
+   "c": "140",
+   "k": "hw",
+   "n": 1,
+   "title": "Homework 1"
+  },
+  {
+   "uid": "event-assignment-override-305497",
+   "d": "2026-10-09",
+   "t": "07:00",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Content Homework 1 - assigned week 1, due week 2"
+  },
+  {
+   "uid": "event-assignment-1899639",
+   "d": "2026-10-12",
+   "t": null,
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Syllabus Quiz (Due Monday at midnight, week 3)"
+  }
+ ]
+}

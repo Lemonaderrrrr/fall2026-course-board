@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fall 2026 课程总表</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: 顶部 next-up 倒计时 → 课程卡(权重条) → Week×Course 周网格 → 注意事项。像一张贴在桌前的学期作战表。 */
+:root{
+  --bg:#f6f7f4; --panel:#ffffff; --fg:#1d2320; --muted:#5f6a64; --line:#dde2dc; --soft:#eef1ec;
+  --accent:#2f6b4f; --warn:#b45309; --crit:#b42318; --ok:#2f7d4f;
+  --c105:#2563a8; --c121:#7a4bb3; --c140:#b3431f; --c7c:#1f8a78; --cswe:#a8741a;
+  --display:"Schibsted Grotesk","PingFang SC","Hiragino Sans GB","Noto Sans SC",system-ui,sans-serif;
+  --body:"PingFang SC","Hiragino Sans GB","Noto Sans SC",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141816; --panel:#1b201d; --fg:#e6ebe7; --muted:#9aa59f; --line:#2c3430; --soft:#222925;
+  --accent:#7cc39c; --warn:#f0a44b; --crit:#f47a6e; --ok:#6fcf97;
+  --c105:#6fa8e8; --c121:#b58ce6; --c140:#ec8762; --c7c:#5fcab6; --cswe:#e0b457; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141816; --panel:#1b201d; --fg:#e6ebe7; --muted:#9aa59f; --line:#2c3430; --soft:#222925;
+  --accent:#7cc39c; --warn:#f0a44b; --crit:#f47a6e; --ok:#6fcf97;
+  --c105:#6fa8e8; --c121:#b58ce6; --c140:#ec8762; --c7c:#5fcab6; --cswe:#e0b457; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:14px;line-height:1.5}
+.wrap{max-width:1280px;margin:0 auto;padding-inline:16px;padding-block:28px 60px;display:flex;flex-direction:column;gap:28px}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-size:28px;font-weight:800;letter-spacing:-.01em}
+h2{font-size:17px;font-weight:700}
+.sub{color:var(--muted);margin-top:4px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px}
+.sync{font-size:12px;color:var(--muted)}
+section{display:flex;flex-direction:column;gap:12px}
+.sechead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px}
+
+/* next up */
+.next{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.nx{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:4px;min-width:0;border-top:3px solid var(--cc)}
+.nx .when{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted)}
+.nx .cd{font-family:var(--mono);font-weight:500;color:var(--fg)}
+.nx .cd.soon{color:var(--crit)} .nx .cd.mid{color:var(--warn)}
+.nx .lbl{font-weight:600}
+.overdue{font-size:13px;color:var(--crit)}
+
+/* course cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.card .code{font-family:var(--display);font-weight:800;font-size:18px;color:var(--cc)}
+.card .units{font-size:12px;color:var(--muted)}
+.card .name{font-size:12px;color:var(--muted);margin-top:-8px}
+.bar{display:flex;height:22px;border-radius:5px;overflow:hidden;gap:2px}
+.bar span{display:flex;align-items:center;justify-content:center;font-size:11px;font-family:var(--mono);color:#fff;background:var(--cc);white-space:nowrap;overflow:hidden;min-width:0}
+.bar span:nth-child(2){opacity:.8}.bar span:nth-child(3){opacity:.62}.bar span:nth-child(4){opacity:.46}.bar span:nth-child(5){opacity:.34}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:13px;margin:0}
+.kv dt{color:var(--muted);white-space:nowrap}
+.kv dd{margin:0;min-width:0}
+.lab{font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px}
+.tag{display:inline-block;font-size:11px;padding:0 6px;border-radius:4px;background:var(--soft);color:var(--muted);margin-left:4px}
+
+/* week grid */
+.filters{display:flex;flex-wrap:wrap;gap:6px}
+.chipbtn{font:inherit;font-size:12px;border:1px solid var(--line);background:var(--panel);color:var(--fg);border-radius:999px;padding:3px 10px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chipbtn .dot{width:8px;height:8px;border-radius:50%;background:var(--cc)}
+.chipbtn[aria-pressed="false"]{opacity:.45}
+.chipbtn:focus-visible,.item input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.gridwrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:900px;table-layout:fixed}
+th,td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);vertical-align:top;text-align:left;padding:8px}
+th:last-child,td:last-child{border-right:0}
+thead th{position:sticky;top:0;background:var(--panel);font-family:var(--display);font-size:13px;border-bottom:2px solid var(--line)}
+thead th .cdot{display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--cc);margin-right:6px}
+th.wk,td.wk{width:92px;background:var(--soft)}
+td.wk b{font-family:var(--display);font-size:15px;display:block}
+td.wk span{font-size:11px;color:var(--muted);font-family:var(--mono)}
+tr.now td.wk{background:var(--accent);color:var(--bg)} tr.now td.wk span{color:var(--bg)}
+tr.now td{background:color-mix(in srgb,var(--accent) 6%,var(--panel))}
+.topic{font-size:12.5px;color:var(--fg);margin-bottom:6px}
+.items{display:flex;flex-direction:column;gap:4px}
+.item{display:flex;gap:6px;align-items:flex-start;font-size:12px;line-height:1.35;padding:3px 5px;border-radius:4px;background:var(--soft);border-left:3px solid var(--cc)}
+.item.mid,.item.final{background:color-mix(in srgb,var(--cc) 16%,var(--panel));font-weight:600}
+.item input{margin:1px 0 0;accent-color:var(--cc);flex:none}
+.item label{cursor:pointer;min-width:0}
+.item .d{font-family:var(--mono);color:var(--muted);font-weight:400}
+.item.inf{border-left-style:dashed}
+.item.inf .q{color:var(--muted);font-weight:400}
+.item.done{opacity:.5} .item.done label{text-decoration:line-through}
+.item.late:not(.done){box-shadow:inset 0 0 0 1px var(--crit)}
+.item .cn{font-weight:600;color:var(--cc)}
+.item .cv{font-size:10px;font-family:var(--mono);padding:0 4px;margin-left:4px;border-radius:3px;border:1px solid var(--line);color:var(--muted);font-weight:400}
+.item.read,.item.lab{background:transparent}
+td.day .dn{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:4px;display:flex;justify-content:space-between;gap:4px}
+td.day.today{background:color-mix(in srgb,var(--accent) 14%,var(--panel))}
+td.day.today .dn{color:var(--accent);font-weight:600}
+td.day.off{background:repeating-linear-gradient(135deg,var(--soft) 0 6px,var(--panel) 6px 12px)}
+td.day.out{background:var(--soft);opacity:.5}
+td.day .hol{font-size:11px;color:var(--warn)}
+tr.topics td{background:var(--soft);padding:6px 8px 10px;border-bottom:2px solid var(--line)}
+tr.now + tr.topics td{background:color-mix(in srgb,var(--accent) 6%,var(--soft))}
+.tlist{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--muted)}
+.tlist span b{color:var(--cc);font-weight:600;margin-right:4px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:10px;margin-right:5px;vertical-align:-1px;border-left:3px solid var(--muted);background:var(--soft)}
+.legend i.dash{border-left-style:dashed}
+
+/* notes */
+.notes{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.note{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0}
+.note h3{margin:0 0 6px;font-size:14px;font-family:var(--display)}
+.note ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:13px}
+.note.crit{border-left:4px solid var(--crit)} .note.warn{border-left:4px solid var(--warn)}
+@media (prefers-reduced-motion:no-preference){.item,.nx{transition:opacity .15s}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">UCI · Fall Quarter 2026 · 22 units</div>
+      <h1>Fall 2026 课程总表</h1>
+      <div class="sub">5 门课 + 2 门 lab。数据来自各课 syllabus 和 WebReg 日历，Canvas 日历每天早上 6:00 自动合并进来。勾选状态存在当前浏览器里。</div>
+    </div>
+    <div class="sync" id="sync">Canvas 数据加载中…</div>
+  </header>
+
+  <section>
+    <div class="sechead"><h2>接下来要交 / 要考</h2><span class="overdue" id="overdue"></span></div>
+    <div class="next" id="next"></div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>各课占比与考试</h2><span class="eyebrow">权重条按 syllabus 原数</span></div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section>
+    <div class="sechead">
+      <h2>按星期看：每天要交 / 要考</h2>
+      <div class="filters" id="filters"></div>
+    </div>
+    <div class="legend"><span><i></i>syllabus 写明</span><span><i class="dash"></i>按规律推断，等 Canvas 公告确认</span><span>红框 = 已过期未勾</span><span>斜纹 = 放假</span><span>Canvas 标 = 来自 Canvas 日历，以它为准</span><span>每周下方灰条 = 各课本周内容</span></div>
+    <div class="gridwrap"><table id="grid"></table></div>
+  </section>
+
+  <section>
+    <h2>需要注意</h2>
+    <div class="notes">
+      <div class="note warn" id="conflicts" hidden><h3>Canvas 与 syllabus 不一致（已按 Canvas 显示）</h3><ul></ul></div>
+      <div class="note crit"><h3>期中扎堆：10/26 – 11/3</h3><ul>
+        <li><b>Mon 10/26</b> Math 105A midterm（9:00 课上）</li>
+        <li><b>Fri 10/30</b> 一天三件：121A midterm 11:00 · 140A midterm 12:00 · SWE Quiz 5</li>
+        <li><b>Tue 11/3</b> Physics 7C midterm（8:00–9:30）</li>
+        <li>同一周还有 140A HW5（Thu 10/29）、SWE HW 2A（Thu 10/29）</li>
+      </ul></div>
+      <div class="note warn"><h3>Finals week：12/7 – 12/11</h3><ul>
+        <li>Mon 12/7 13:30 Math 140A（55%）</li>
+        <li>Tue 12/8 08:00 Physics 7C（40%）+ SWE Quiz 10 / Final（时间未公布）</li>
+        <li>Wed 12/9 08:00 Math 105A（50%）</li>
+        <li>Fri 12/11 08:00 Math 121A（40%）· 13:30 Math 105LA</li>
+      </ul></div>
+      <div class="note"><h3>还没拿到的信息</h3><ul>
+        <li>Math 105LA 与 Physics 7LC 的评分构成（lab syllabus 未提供）</li>
+        <li>Math 140A HW2 起的日期：HW1 在 Canvas 上改到了周一 Gradescope，后面几次等 Canvas 发布后会自动更新</li>
+        <li>SWE 43 Final（Quiz 10）12/8 的具体时间与地点</li>
+        <li>121A 每周 HW / quiz 除 Quiz 1（10/6）外都是按规律推断</li>
+        <li>7C 每周 HW（周一 23:59）和 reading quiz（周三 discussion）的起止周是推断</li>
+      </ul></div>
+      <div class="note"><h3>SWE 43 syllabus 里的笔误</h3><ul>
+        <li>Quiz 6 写成 “6-Oct”，按周次应为 <b>Fri 11/6</b></li>
+        <li>Quiz 7 写成 “13-Oct”，应为 <b>Fri 11/13</b></li>
+        <li>Quiz 9 “Online Quiz 30-Nov Fri”：11/30 是周一，11/27 是感恩节，以 Canvas 为准</li>
+        <li>Quiz：每周五 9:00–15:00 在 PCB 1200 做，限时 35 分钟，禁用 AI</li>
+      </ul></div>
+    </div>
+  </section>
+</div>
+
+<script>
+const COURSES = [
+  {k:"105", code:"Math 105A", name:"Numerical Analysis I · Sungha Yoon", units:"4u + 105LA 1u", cc:"--c105",
+   weights:[["Quiz",25],["Mid",25],["Final",50]],
+   kv:[["Lec","MWF 9:00 · RH 104"],["Dis","TuTh 11:00 · DBH 1500（quiz 在周四）"],["HW","布置但不收，出题会参考"],["Quiz","6 次，drop 最低 → 每次 ≈5%"],["Midterm","Mon 10/26 9:00 课上 · 25%"],["Final","Wed 12/9 8:00–10:00 · 50%"]],
+   lab:"105LA Lab：MW 14:00 · ALP 3600 · MATLAB · Final Fri 12/11 13:30–15:30 · 评分未知"},
+  {k:"121", code:"Math 121A", name:"Linear Algebra I · Alexandra Florea", units:"4u", cc:"--c121",
+   weights:[["HW",5],["Quiz",20],["Mid",35],["Final",40]],
+   kv:[["Lec","MWF 11:00 · SH 134"],["Dis","TuTh 15:00 · RH 114（quiz 在周二）"],["HW","每周五 12:00 Gradescope，drop 最低，迟交 1 周内 −20%"],["Quiz","周二，考上周五 HW，drop 最低，首次 10/6"],["Midterm","Fri 10/30 11:00 · SH 134 · 35% · 有座位表"],["Final","Fri 12/11 8:00–10:00 · 40%"]],
+   lab:"教材 Friedberg 5e，覆盖 §1.1–5.2"},
+  {k:"140", code:"Math 140A", name:"Elementary Analysis I · Yi Lai", units:"4u", cc:"--c140",
+   weights:[["HW",10],["Mid",35],["Final",55]],
+   kv:[["Lec","MWF 12:00 · SSL 228（44798）"],["Dis","TuTh 13:00 · MSTB 118"],["HW","周四 discussion 交纸质，drop 最低，不收迟交"],["Midterm","Fri 10/30 12:00 课上 · 35% · 考到 10/23"],["Final","Mon 12/7 13:30–15:30 · 55%"],["规则","缺考期中有证明 → 权重并入 final"]],
+   lab:"教材 Ross《Elementary Analysis》2e，§1–18"},
+  {k:"7c", code:"Physics 7C", name:"Classical Physics · Ryan Keeley", units:"4u + 7LC 1u", cc:"--c7c",
+   weights:[["HW",20],["Part.",10],["RQ",10],["Mid",20],["Final",40]],
+   kv:[["Lec","TuTh 8:00–9:20 · SSLH 100"],["Dis","Wed 15:00 · RH 108（reading quiz）"],["HW","每周一 23:59，math-physics-learning app，mastery 做对 20 题"],["参与","课上 clicker / think-pair-share 记考勤"],["Midterm","Tue 11/3 8:00–9:30 课上 · 20%"],["Final","Tue 12/8 8:00–10:00 · 40%"]],
+   lab:"7LC Lab：Fri 13:00–14:50 · MSTB 125 · 评分未知 ｜ 分数线：A ≥85，B ≥75（只降不升）"},
+  {k:"swe", code:"SWE 43", name:"Intro to Software Engineering · Jess Gillespie", units:"4u", cc:"--cswe",
+   weights:[["Quiz",60],["HW",30],["Attend",10]],
+   kv:[["Lec","TuTh 18:30–19:50 · ALP 1300"],["Dis","Fri 10:00 · PCB 1200（quiz 在这做）"],["HW","3 个，各 10%：需求文档 / Git / 测试计划"],["Quiz","10 次，drop 最低 → 每次 ≈6.7%，周五 15:00 前"],["Midterm","无"],["Final","Quiz 10 · Tue 12/8，时间待定"]],
+   lab:"不收迟交 · 课程评价 +0.5% extra credit"},
+];
+const CMAP = Object.fromEntries(COURSES.map(c=>[c.k,c]));
+
+const WEEKS = [
+  ["W0","2026-09-24","2026-09-27"],["W1","2026-09-28","2026-10-04"],["W2","2026-10-05","2026-10-11"],
+  ["W3","2026-10-12","2026-10-18"],["W4","2026-10-19","2026-10-25"],["W5","2026-10-26","2026-11-01"],
+  ["W6","2026-11-02","2026-11-08"],["W7","2026-11-09","2026-11-15"],["W8","2026-11-16","2026-11-22"],
+  ["W9","2026-11-23","2026-11-29"],["W10","2026-11-30","2026-12-06"],["Finals","2026-12-07","2026-12-11"]];
+
+const TOPICS = {
+ "105":["—","§1.1–2.2 舍入误差、二分法、不动点迭代（Lab 1 MATLAB 入门）","§2.3–2.5, 6.1 Newton 法、误差分析、加速收敛、线性方程组","§6.1–6.2 Gauss 消元、主元策略","§6.3–6.5 矩阵求逆、行列式、LU 分解；周五期中复习","期中；§6.6 特殊矩阵、§7.1 向量/矩阵范数","§7.2–7.3 特征值、Jacobi & Gauss-Seidel","§7.3–7.5 松弛法、误差界与迭代改进（11/11 放假）","§7.6, 9.1–9.2 共轭梯度、正交矩阵与相似变换","§9.3 幂法（11/27 放假）","§9.4–9.6 Householder、QR 算法、SVD；期末复习","期末 Wed 12/9"],
+ "121":["§1.1–1.2 向量空间","§1.2–1.4 子空间、线性组合与方程组","§1.5–1.6 线性相关、基与维数","§2.1–2.2 线性变换、零空间与值域、矩阵表示","§2.3–2.4 复合与矩阵乘法、可逆与同构","§2.4 → 复习 → 期中 Fri 10/30","§2.5, 3.1–3.2 换基、初等矩阵、秩","§3.2, 4.1 秩与逆、2×2 行列式（11/11 放假）","§4.2–4.4 n×n 行列式及其性质","§4.5, 5.1 行列式刻画、特征值与特征向量（11/27 放假）","§5.1–5.2 可对角化；期末复习","期末 Fri 12/11"],
+ "140":["§1 集合记号、自然数、归纳法","§2–4 有理数、有理根、序公理、绝对值、上下确界","§4–5, 7–8 完备性、阿基米德性质、Q 的稠密性、收敛定义","§7–9 证明数列收敛、有界性、极限运算定理","§5, 8–10 发散、夹逼、无穷极限、单调收敛定理","MCT 应用（e、递推数列）→ 复习 → 期中 Fri 10/30","§10–12 子列、Bolzano-Weierstrass、Cauchy 列、limsup/liminf","§14–15 级数、比较判别法（11/11 放假）","§14–15 比值/根值、绝对收敛、积分判别、交错级数","§17–18 连续性（ε-δ）、最值定理（11/27 放假）","§13, 18 介值定理、反函数连续、度量空间","期末 Mon 12/7"],
+ "7c":["向量 & 运动学复习 Ch 2–4","牛顿定律 Ch 5–6","牛顿定律 Ch 5–6","功与能 Ch 7–8","功与能 Ch 7–8","动量 Ch 9","动量 Ch 9 · 期中 Tue 11/3","转动 Ch 10–12","转动 Ch 10–12","引力 Ch 13（11/26 感恩节）","引力 Ch 13","期末 Tue 12/8"],
+ "swe":["L1 Intro","L2 What is SE · L3 Failures & Requirements","L4 Use Cases · L5 Architecture（HW1 需求访谈）","L6 Architecture pt2 · L7 Designs/Models/Notations","L8 DMN pt2 · L9 User Orientation","L10 User Orientation pt2 · L11 Testing","L12–13 Testing pt2–3","L14 Testing pt4 · L15 SW Process Models","L16–17 SW Process Models pt2–3","L18 Moore's Law 等 · 感恩节","TBD","Final = Quiz 10"],
+};
+
+// k: hw|quiz|mid|final ; inf: 推断
+const ITEMS = [];
+const numOf=l=>{const m=/(?:HW|Quiz)\s*(\d+)/i.exec(l);return m?+m[1]:null};
+const add=(c,d,t,k,label,w,inf)=>ITEMS.push({id:`${c}|${d}|${label}`,c,d,t,k,label,w,inf:!!inf,n:numOf(label)});
+// Math 105A
+[["10-08",1],["10-15",2],["10-22",3],["11-12",4],["11-19",5],["12-03",6]].forEach(([d,n])=>add("105","2026-"+d,"11:00","quiz",`Quiz ${n}`,"≈5%"));
+add("105","2026-10-26","09:00","mid","Midterm","25%");
+add("105","2026-12-09","08:00","final","Final","50%");
+add("105","2026-12-11","13:30","final","105LA Lab Final","?");
+// Math 121A
+["10-02","10-09","10-16","10-23","11-06","11-13","11-20","12-04"].forEach((d,i)=>add("121","2026-"+d,"12:00","hw",`HW ${i+1}`,"5% 合计",i>0));
+["10-06","10-13","10-20","10-27","11-10","11-17","11-24","12-01"].forEach((d,i)=>add("121","2026-"+d,"15:00","quiz",`Quiz ${i+1}`,"20% 合计",i>0));
+add("121","2026-10-30","11:00","mid","Midterm","35%");
+add("121","2026-12-11","08:00","final","Final","40%");
+// Math 140A
+add("140","2026-10-01","13:00","hw","HW 1","≈1.1%");
+["10-08","10-15","10-22","10-29","11-05","11-12","11-19","11-24","12-03"].forEach((d,i)=>add("140","2026-"+d,"13:00","hw",`HW ${i+2}`,"≈1.1%",true));
+add("140","2026-10-30","12:00","mid","Midterm","35%");
+add("140","2026-12-07","13:30","final","Final","55%");
+// Physics 7C
+["10-05","10-12","10-19","10-26","11-02","11-09","11-16","11-23","11-30"].forEach((d,i)=>add("7c","2026-"+d,"23:59","hw",`HW ${i+1}`,"20% 合计",true));
+["09-30","10-07","10-14","10-21","10-28","11-04","11-18","11-25","12-02"].forEach(d=>add("7c","2026-"+d,"15:00","quiz","Reading quiz","10% 合计",true));
+add("7c","2026-11-03","08:00","mid","Midterm","20%");
+add("7c","2026-12-08","08:00","final","Final","40%");
+// SWE 43
+["10-02","10-09","10-16","10-23","10-30","11-06","11-13","11-20"].forEach((d,i)=>add("swe","2026-"+d,"15:00","quiz",`Quiz ${i+1}`,"≈6.7%"));
+add("swe","2026-11-30","15:00","quiz","Quiz 9（online，日期存疑）","≈6.7%",true);
+add("swe","2026-10-22","23:59","hw","HW1 需求文档（Gradescope）","10%");
+add("swe","2026-10-29","23:59","hw","HW2A Git（Canvas）","HW2 共 10%");
+add("swe","2026-11-05","23:59","hw","HW2B Git","HW2 共 10%");
+add("swe","2026-11-12","23:59","hw","HW2C Git","HW2 共 10%");
+add("swe","2026-11-24","23:59","hw","HW3 测试计划（Gradescope）","10%");
+add("swe","2026-12-08",null,"final","Final（Quiz 10，时间待定）","≈6.7%");
+const sortItems=()=>ITEMS.sort((a,b)=>(a.d+(a.t||"23:59")).localeCompare(b.d+(b.t||"23:59")));
+sortItems();
+
+// ---- 合并 GitHub Actions 每天写入的 data/canvas.json ----
+let CONFLICTS=[];
+function applyCanvas(data){
+  const used=new Set(); CONFLICTS=[];
+  (data.events||[]).forEach(ev=>{
+    if(!CMAP[ev.c])return;
+    let base=null;
+    if(ev.n!=null&&(ev.k==="hw"||ev.k==="quiz")) base=ITEMS.find(it=>!used.has(it)&&!it.src&&it.c===ev.c&&it.k===ev.k&&it.n===ev.n);
+    else if(ev.k==="mid"||ev.k==="final"){const cand=ITEMS.filter(it=>!used.has(it)&&!it.src&&it.c===ev.c&&it.k===ev.k&&!/LA Lab/.test(it.label));if(cand.length===1)base=cand[0];}
+    if(base){
+      used.add(base);
+      if(!base.inf&&(base.d!==ev.d||(ev.t&&base.t!==ev.t)))CONFLICTS.push({c:ev.c,label:base.label,from:`${base.d.slice(5).replace("-","/")} ${base.t||""}`,to:`${ev.d.slice(5).replace("-","/")} ${ev.t||""}`});
+      base.d=ev.d; if(ev.t)base.t=ev.t; base.inf=false; base.src="canvas"; base.ctitle=ev.title;
+    }else{
+      ITEMS.push({id:"cv|"+ev.uid,c:ev.c,d:ev.d,t:ev.t,k:ev.k,label:ev.title,w:"",inf:false,src:"canvas"});
+    }
+  });
+  sortItems();
+}
+function renderConflicts(fetched){
+  const box=document.getElementById("conflicts");
+  box.hidden=!CONFLICTS.length;
+  box.querySelector("ul").innerHTML=CONFLICTS.map(x=>`<li><b>${CMAP[x.c].code} ${esc(x.label)}</b>：syllabus ${x.from} → Canvas <b>${x.to}</b></li>`).join("");
+}
+
+const WD=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const due=it=>{const [y,m,d]=it.d.split("-").map(Number);const [h,mi]=(it.t||"23:59").split(":").map(Number);return new Date(y,m-1,d,h,mi)};
+const md=it=>{const x=due(it);return `${WD[x.getDay()]} ${x.getMonth()+1}/${x.getDate()}`};
+const kindName={hw:"HW",quiz:"Quiz",mid:"Midterm",final:"Final",read:"Reading",lab:"Lab",other:"Canvas"};
+
+let done={}; let hidden=new Set();
+try{hidden=new Set(JSON.parse(localStorage.getItem("f26-hidden")||"[]"))}catch(e){}
+try{done=JSON.parse(localStorage.getItem("f26-done")||"{}")}catch(e){}
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+function renderCards(){
+  document.getElementById("cards").innerHTML=COURSES.map(c=>`
+   <article class="card" style="--cc:var(${c.cc})">
+     <div class="top"><span class="code">${c.code}</span><span class="units">${c.units}</span></div>
+     <div class="name">${esc(c.name)}</div>
+     <div class="bar" role="img" aria-label="${c.weights.map(w=>w[0]+" "+w[1]+"%").join(", ")}">${c.weights.map(([n,p])=>`<span style="flex:${p}" title="${n} ${p}%">${p>=10?n+" "+p:p}</span>`).join("")}</div>
+     <dl class="kv">${c.kv.map(([a,b])=>`<dt>${a}</dt><dd>${esc(b)}</dd>`).join("")}</dl>
+     <div class="lab">${esc(c.lab)}</div>
+   </article>`).join("");
+}
+function renderFilters(){
+  const f=document.getElementById("filters");
+  f.innerHTML=COURSES.map(c=>`<button class="chipbtn" id="f-${c.k}" data-k="${c.k}" aria-pressed="${!hidden.has(c.k)}" style="--cc:var(${c.cc})"><span class="dot"></span>${c.code}</button>`).join("");
+  f.onclick=e=>{const b=e.target.closest("button");if(!b)return;const k=b.dataset.k;hidden.has(k)?hidden.delete(k):hidden.add(k);
+    try{localStorage.setItem("f26-hidden",JSON.stringify([...hidden]))}catch(e){} renderFilters();renderGrid();};
+}
+function itemHTML(it,byDay){
+  const now=new Date(); const late=due(it)<now;
+  const cls=["item",it.k,it.inf?"inf":"",done[it.id]?"done":"",late?"late":""].join(" ");
+  const uid="cb-"+btoa(unescape(encodeURIComponent(it.id))).replace(/[^a-z0-9]/gi,"");
+  return `<div class="${cls}" style="--cc:var(${CMAP[it.c].cc})"><input type="checkbox" id="${uid}" data-id="${esc(it.id)}" ${done[it.id]?"checked":""}><label for="${uid}">${byDay?`<span class="d">${it.t||"待定"}</span> <span class="cn">${CMAP[it.c].code}</span>`:`<span class="d">${md(it)}${it.t?" "+it.t:""}</span>`} ${esc(it.label)} <span class="q">${it.w}${it.inf?" · 推断":""}</span>${it.src?`<span class="cv">Canvas</span>`:""}</label></div>`;
+}
+const HOL={"2026-11-11":"Veterans Day","2026-11-26":"感恩节","2026-11-27":"感恩节"};
+const DAYS=[["周一",0],["周二",1],["周三",2],["周四",3],["周五",4],["周末",5]];
+const iso=x=>`${x.getFullYear()}-${String(x.getMonth()+1).padStart(2,"0")}-${String(x.getDate()).padStart(2,"0")}`;
+function renderGrid(){
+  const cs=COURSES.filter(c=>!hidden.has(c.k)); const vis=new Set(cs.map(c=>c.k));
+  const now=new Date(); const tIso=iso(now);
+  let h=`<thead><tr><th class="wk">周</th>${DAYS.map(d=>`<th>${d[0]}</th>`).join("")}</tr></thead><tbody>`;
+  WEEKS.forEach(([w,s,e],i)=>{
+    const st=new Date(s+"T12:00"); const mon=new Date(st); mon.setDate(st.getDate()-((st.getDay()+6)%7));
+    const cur=tIso>=s&&tIso<=e;
+    h+=`<tr class="${cur?"now":""}"><td class="wk" rowspan="2"><b>${w}</b><span>${s.slice(5).replace("-","/")}–${e.slice(5).replace("-","/")}</span>${cur?"<span>本周</span>":""}</td>`;
+    DAYS.forEach(([,off])=>{
+      const ds=[]; const d0=new Date(mon); d0.setDate(mon.getDate()+off); ds.push(iso(d0));
+      if(off===5){const d1=new Date(d0); d1.setDate(d0.getDate()+1); ds.push(iso(d1));}
+      const out=ds.every(d=>d<s||d>e); const hol=ds.map(d=>HOL[d]).find(Boolean);
+      const its=ITEMS.filter(it=>vis.has(it.c)&&ds.includes(it.d));
+      const lbl=ds.map(d=>+d.slice(5,7)+"/"+ +d.slice(8)).join("–");
+      const cls=["day",ds.includes(tIso)?"today":"",hol?"off":"",out?"out":""].join(" ");
+      h+=`<td class="${cls}"><div class="dn"><span>${lbl}</span>${hol?`<span class="hol">${hol}</span>`:""}</div><div class="items">${out?"":its.map(it=>itemHTML(it,true)).join("")}</div></td>`;
+    });
+    h+=`</tr><tr class="topics"><td colspan="6"><div class="tlist">${cs.map(c=>`<span style="--cc:var(${c.cc})"><b>${c.code}</b>${esc(TOPICS[c.k][i])}</span>`).join("")}</div></td></tr>`;
+  });
+  document.getElementById("grid").innerHTML=h+"</tbody>";
+}
+function renderNext(){
+  const now=new Date();
+  const up=ITEMS.filter(it=>!done[it.id]&&due(it)>=now).slice(0,8);
+  const od=ITEMS.filter(it=>!done[it.id]&&due(it)<now).length;
+  document.getElementById("overdue").textContent=od?`${od} 项已过期未勾`:"";
+  document.getElementById("next").innerHTML=up.map(it=>{
+    const ms=due(it)-now,hrs=ms/36e5,days=Math.floor(hrs/24);
+    const cd=hrs<24?`${Math.floor(hrs)}h ${Math.floor((hrs%1)*60)}m`:`${days} 天 ${Math.floor(hrs%24)}h`;
+    return `<div class="nx" style="--cc:var(${CMAP[it.c].cc})"><div class="when"><span>${CMAP[it.c].code} · ${kindName[it.k]}</span><span class="cd ${hrs<48?"soon":hrs<120?"mid":""}">${cd}</span></div>
+      <div class="lbl">${esc(it.label)}</div><div class="when"><span class="mono">${md(it)} ${it.t||"时间待定"}</span><span>${it.w}${it.inf?" · 推断":""}</span></div></div>`}).join("")||"<div class='sub'>全部完成。</div>";
+}
+function renderAll(){renderGrid();renderNext()}
+
+// ---- 勾选状态存本机浏览器 ----
+const syncEl=document.getElementById("sync");
+function save(){try{localStorage.setItem("f26-done",JSON.stringify(done))}catch(e){}}
+document.getElementById("grid").addEventListener("change",e=>{
+  const id=e.target.dataset&&e.target.dataset.id;if(!id)return;
+  if(e.target.checked)done[id]=true;else delete done[id];
+  renderAll();save();
+});
+fetch("data/canvas.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(data=>{
+  applyCanvas(data); renderAll(); renderConflicts();
+  const f=new Date(data.fetched_at);
+  syncEl.textContent=`Canvas 同步于 ${f.getMonth()+1}/${f.getDate()} ${String(f.getHours()).padStart(2,"0")}:${String(f.getMinutes()).padStart(2,"0")} · ${data.events.length} 项 · 每天 6:00 自动更新`;
+}).catch(()=>{syncEl.textContent="Canvas 数据没加载到，只显示 syllabus 里的安排"});
+
+renderCards();renderFilters();renderAll();
+setInterval(renderNext,60000);
+</script>
+</body>
+</html>
