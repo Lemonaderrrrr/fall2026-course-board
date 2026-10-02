@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-01T11:41-07:00",
+ "fetched_at": "2026-10-02T11:12-07:00",
  "events": [
   {
    "uid": "event-assignment-1913605",
@@ -54,6 +54,15 @@
    "k": "read",
    "n": null,
    "title": "Read Sec. 2"
+  },
+  {
+   "uid": "event-assignment-1913594",
+   "d": "2026-10-01",
+   "t": null,
+   "c": "swe",
+   "k": "other",
+   "n": null,
+   "title": "Lecture 3: Application Context of ToDo List App"
   },
   {
    "uid": "event-assignment-1913616",
