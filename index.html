@@ -70,6 +70,7 @@ section{display:flex;flex-direction:column;gap:12px}
 .sl{font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
 .exams{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .exam{background:var(--soft);border-radius:8px;padding:10px 14px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.exam:last-child:nth-child(odd){grid-column:1/-1} /* 三场考试：两场期中并排，期末占整行 */
 .exam .el{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted)}
 .exam .el b{color:var(--cc);font-weight:600;font-variant-numeric:tabular-nums}
 .exam .ed{font-size:18px;font-weight:600;line-height:1.35;font-variant-numeric:tabular-nums}
@@ -175,23 +176,26 @@ tr.now + tr.topics td{background:color-mix(in srgb,var(--accent) 6%,var(--soft))
     <h2>需要注意</h2>
     <div class="notes">
       <div class="note warn" id="conflicts" hidden><h3>Canvas 与 syllabus 不一致（已按 Canvas 显示）</h3><ul></ul></div>
-      <div class="note crit"><h3>期中扎堆：10/26 – 11/3</h3><ul>
-        <li><b>Mon 10/26</b> Math 105A midterm（9:00 课上）</li>
-        <li><b>Fri 10/30</b> 一天三件：121A midterm 11:00 · 140A midterm 12:00 · SWE Quiz 5</li>
-        <li><b>Tue 11/3</b> Physics 7C midterm（8:00–9:30）</li>
-        <li>同一周还有 140A HW5（Thu 10/29）、SWE HW 2A（Thu 10/29）</li>
+      <div class="note crit"><h3>期中季：10/19 – 11/9，四周五场</h3><ul>
+        <li><b>Mon 10/19</b> Math 140A Midterm 1（16:00 课上，20%）</li>
+        <li><b>Mon 10/26</b> Math 105A midterm（9:00 课上，25%），当天 12:00 还有 140A Quiz 3</li>
+        <li><b>Fri 10/30</b> Math 121A midterm（11:00，35%）· SWE Quiz 5</li>
+        <li><b>Tue 11/3</b> Physics 7C midterm（8:00–9:30，20%），前一天 12:00 有 140A Quiz 4</li>
+        <li><b>Mon 11/9</b> Math 140A Midterm 2（16:00 课上，20%）</li>
+        <li>最挤的是 10/26 – 11/3：九天三场，中间还有 SWE HW 2A（Thu 10/29）</li>
       </ul></div>
       <div class="note warn"><h3>Finals week：12/7 – 12/11</h3><ul>
-        <li>Mon 12/7 13:30 Math 140A（55%）</li>
         <li>Tue 12/8 08:00 Physics 7C（40%）+ SWE Quiz 10 / Final（时间未公布）</li>
-        <li>Wed 12/9 08:00 Math 105A（50%）</li>
+        <li><b>Wed 12/9 一天两门</b>：08:00–10:00 Math 105A（50%）· 16:00–18:00 Math 140A（35%，地点待定）</li>
         <li>Fri 12/11 08:00 Math 121A（40%）· 13:30 Math 105LA</li>
       </ul></div>
       <div class="note"><h3>还没拿到的信息</h3><ul>
         <li>Math 105LA 与 Physics 7LC 的评分构成（lab syllabus 未提供）</li>
-        <li>Math 140A HW2 起的日期：HW1 在 Canvas 上改到了周一 Gradescope，后面几次等 Canvas 发布后会自动更新</li>
+        <li>Math 140A 考试：Midterm 1、Midterm 2 的范围，期末的地点、范围和是否累积，都还没公布</li>
+        <li>Math 140A quiz：11/9（Midterm 2 当天）没有 quiz 是推断。syllabus 原文写的是“11/19 没有 quiz”，但 Midterm 2 在 11/9（周一），按“共 7 次”推算应为 11/9，等老师确认。Quiz 5–7 因此标为推断</li>
+        <li>Math 140A 进度与作业：syllabus 没有按周进度表，只说大约讲 Ross 前 20 节、可能跳过选读节，所以每周内容只填到 §1–3。HW2 起的日期按“每周一 12:00”推断，期中当天（10/19、11/9）是否照常交未确认，Canvas 发布后会自动更新</li>
         <li>SWE 43 Final（Quiz 10）12/8 的具体时间与地点</li>
-        <li>121A 每周 HW / quiz 除 Quiz 1（10/6）外都是按规律推断</li>
+        <li>121A 的 quiz 日期全部按规律推断：第一次 10/13（考 HW2），10/6 和期中后的 11/3 没有。作业日期除 Canvas 已发布的以外也是推断</li>
         <li>7C 每周 HW（周一 23:59）和 reading quiz（周三 discussion）的起止周是推断</li>
       </ul></div>
       <div class="note"><h3>SWE 43 syllabus 里的笔误</h3><ul>
@@ -209,18 +213,18 @@ const COURSES = [
   {k:"105", code:"Math 105A", name:"Numerical Analysis I · Sungha Yoon", units:"4 units + 105LA 1 unit", cc:"--c105",
    weights:[["Quiz",25],["Midterm",25],["Final",50]],
    exams:[{l:"期中",w:25,d:"Mon 10/26",t:"9:00–9:50",x:"课上，RH 104"},{l:"期末",w:50,d:"Wed 12/9",t:"8:00–10:00",x:"闭卷，带学生证"}],
-   rows:[["上课","MWF 9:00–9:50 · RH 104"],["讨论课","TuTh 11:00 · DBH 1500，quiz 在周四"],["作业","布置但不收，考试会参考"],["Quiz","共 6 次，去掉最低 1 次，每次约 5%"]],
+   rows:[["上课","MWF 9:00–9:50 · RH 104"],["讨论课","TuTh 11:00 · HIB 110，quiz 在周四"],["作业","布置但不收，考试会参考"],["Quiz","共 6 次，去掉最低 1 次，每次约 5%"]],
    note:"105LA Lab：MW 14:00 · ALP 3600，用 MATLAB。期末 Fri 12/11 13:30–15:30，评分方式未知。"},
   {k:"121", code:"Math 121A", name:"Linear Algebra I · Alexandra Florea", units:"4 units", cc:"--c121",
    weights:[["作业",5],["Quiz",20],["Midterm",35],["Final",40]],
    exams:[{l:"期中",w:35,d:"Fri 10/30",t:"11:00–11:50",x:"SH 134，有座位表，提前 20 分钟到"},{l:"期末",w:40,d:"Fri 12/11",t:"8:00–10:00",x:"有座位表"}],
-   rows:[["上课","MWF 11:00 · SH 134"],["讨论课","TuTh 15:00 · RH 114，quiz 在周二"],["作业","每周五 12:00 交 Gradescope，去掉最低 1 次；迟交 1 周内扣 20%"],["Quiz","周二考上周五的作业，去掉最低 1 次，第一次 10/6"]],
+   rows:[["上课","MWF 11:00 · SH 134"],["讨论课","TuTh 15:00 · RH 114，quiz 在周二"],["作业","每周五 12:00 交 Gradescope，去掉最低 1 次；迟交 1 周内扣 20%"],["Quiz","周二考上周五的作业，去掉最低 1 次。第一次 10/13（考 HW2），10/6 和期中后的 11/3 没有"]],
    note:"教材 Friedberg《Linear Algebra》第 5 版，讲 §1.1–5.2。"},
-  {k:"140", code:"Math 140A", name:"Elementary Analysis I · Yi Lai", units:"4 units", cc:"--c140",
-   weights:[["作业",10],["Midterm",35],["Final",55]],
-   exams:[{l:"期中",w:35,d:"Fri 10/30",t:"12:00–12:50",x:"SSL 228，考到 10/23 的内容"},{l:"期末",w:55,d:"Mon 12/7",t:"13:30–15:30",x:"考场待公布"}],
-   rows:[["上课","MWF 12:00 · SSL 228（44798）"],["讨论课","TuTh 13:00 · MSTB 118"],["作业","去掉最低 1 次，不收迟交。HW1 在 Canvas 上改为周一 12:00 交 Gradescope"],["缺考","有证明的缺考，期中权重并入期末"]],
-   note:"教材 Ross《Elementary Analysis》第 2 版，§1–18。"},
+  {k:"140", code:"Math 140A", name:"Elementary Analysis I · Trent Lucas", units:"4 units", cc:"--c140",
+   weights:[["作业",10],["Quiz",15],["Midterm 1",20],["Midterm 2",20],["Final",35]],
+   exams:[{l:"期中 1",w:20,d:"Mon 10/19",t:"16:00–16:50",x:"课上，SSL 228，范围待公布"},{l:"期中 2",w:20,d:"Mon 11/9",t:"16:00–16:50",x:"课上，SSL 228，范围待公布"},{l:"期末",w:35,d:"Wed 12/9",t:"16:00–18:00",x:"地点、范围待定。同一天 8:00 还有 105A 期末"}],
+   rows:[["上课","MWF 16:00–16:50 · SSL 228"],["讨论课","MW 12:00–12:50 · HH 262，quiz 在周一"],["作业","每周一 12:00 交 Gradescope，按完成度给分。可免交 2 次，不收迟交"],["Quiz","周一讨论课开头 15 分钟，考上周内容。共 7 次，去掉最低 2 次，不补考。11/9 没有 quiz 是推断"],["考试","不能用任何外部资源。期中可能调分，不低于原始分"]],
+   note:"Lec B 44803 · Dis B1 44804。教材 Ross《Elementary Analysis》第 2 版，大约讲前 20 节。不能用 AI 帮解本课的题。"},
   {k:"7c", code:"Physics 7C", name:"Classical Physics · Ryan Keeley", units:"4 units + 7LC 1 unit", cc:"--c7c",
    weights:[["作业",20],["课堂参与",10],["Reading quiz",10],["Midterm",20],["Final",40]],
    exams:[{l:"期中",w:20,d:"Tue 11/3",t:"8:00–9:30",x:"课上，SSLH 100"},{l:"期末",w:40,d:"Tue 12/8",t:"8:00–10:00",x:"考场待公布"}],
@@ -243,15 +247,17 @@ const WEEKS = [
 const TOPICS = {
  "105":["—","§1.1–2.2 舍入误差、二分法、不动点迭代（Lab 1 MATLAB 入门）","§2.3–2.5, 6.1 Newton 法、误差分析、加速收敛、线性方程组","§6.1–6.2 Gauss 消元、主元策略","§6.3–6.5 矩阵求逆、行列式、LU 分解；周五期中复习","期中；§6.6 特殊矩阵、§7.1 向量/矩阵范数","§7.2–7.3 特征值、Jacobi & Gauss-Seidel","§7.3–7.5 松弛法、误差界与迭代改进（11/11 放假）","§7.6, 9.1–9.2 共轭梯度、正交矩阵与相似变换","§9.3 幂法（11/27 放假）","§9.4–9.6 Householder、QR 算法、SVD；期末复习","期末 Wed 12/9"],
  "121":["§1.1–1.2 向量空间","§1.2–1.4 子空间、线性组合与方程组","§1.5–1.6 线性相关、基与维数","§2.1–2.2 线性变换、零空间与值域、矩阵表示","§2.3–2.4 复合与矩阵乘法、可逆与同构","§2.4 → 复习 → 期中 Fri 10/30","§2.5, 3.1–3.2 换基、初等矩阵、秩","§3.2, 4.1 秩与逆、2×2 行列式（11/11 放假）","§4.2–4.4 n×n 行列式及其性质","§4.5, 5.1 行列式刻画、特征值与特征向量（11/27 放假）","§5.1–5.2 可对角化；期末复习","期末 Fri 12/11"],
- "140":["§1 集合记号、自然数、归纳法","§2–4 有理数、有理根、序公理、绝对值、上下确界","§4–5, 7–8 完备性、阿基米德性质、Q 的稠密性、收敛定义","§7–9 证明数列收敛、有界性、极限运算定理","§5, 8–10 发散、夹逼、无穷极限、单调收敛定理","MCT 应用（e、递推数列）→ 复习 → 期中 Fri 10/30","§10–12 子列、Bolzano-Weierstrass、Cauchy 列、limsup/liminf","§14–15 级数、比较判别法（11/11 放假）","§14–15 比值/根值、绝对收敛、积分判别、交错级数","§17–18 连续性（ε-δ）、最值定理（11/27 放假）","§13, 18 介值定理、反函数连续、度量空间","期末 Mon 12/7"],
+ // 140A（Lucas B 班）的 syllabus 没有按周进度表：只填 Leon 报告过的进度，其余标未知
+ "140":["9/25 第一讲（内容未记录）","Ross §1–3 归纳法、有理根定理、域公理与序公理、绝对值（截至 10/2）","进度未知","进度未知","Midterm 1 Mon 10/19（范围待公布）· 进度未知","进度未知","进度未知","Midterm 2 Mon 11/9（范围待公布）· 进度未知（11/11 放假）","进度未知","进度未知（11/27 放假）","进度未知","期末 Wed 12/9"],
  "7c":["向量 & 运动学复习 Ch 2–4","牛顿定律 Ch 5–6","牛顿定律 Ch 5–6","功与能 Ch 7–8","功与能 Ch 7–8","动量 Ch 9","动量 Ch 9 · 期中 Tue 11/3","转动 Ch 10–12","转动 Ch 10–12","引力 Ch 13（11/26 感恩节）","引力 Ch 13","期末 Tue 12/8"],
  "swe":["L1 Intro","L2 What is SE · L3 Failures & Requirements","L4 Use Cases · L5 Architecture（HW1 需求访谈）","L6 Architecture pt2 · L7 Designs/Models/Notations","L8 DMN pt2 · L9 User Orientation","L10 User Orientation pt2 · L11 Testing","L12–13 Testing pt2–3","L14 Testing pt4 · L15 SW Process Models","L16–17 SW Process Models pt2–3","L18 Moore's Law 等 · 感恩节","TBD","Final = Quiz 10"],
 };
 
-// k: hw|quiz|mid|final ; inf: 推断
+// k: hw|quiz|mid|final ; inf: 推断 ; fixT: 时间是课上开考时间，Canvas 只用来确认日期，不覆盖时间
 const ITEMS = [];
 const numOf=l=>{const m=/(?:HW|Quiz)\s*(\d+)/i.exec(l);return m?+m[1]:null};
-const add=(c,d,t,k,label,w,inf)=>ITEMS.push({id:`${c}|${d}|${label}`,c,d,t,k,label,w,inf:!!inf,n:numOf(label)});
+const midNo=l=>{const m=/Midterm\s*#?\s*(\d+)/i.exec(l);return m?+m[1]:null};
+const add=(c,d,t,k,label,w,inf,fixT)=>ITEMS.push({id:`${c}|${d}|${label}`,c,d,t,k,label,w,inf:!!inf,fixT:!!fixT,n:numOf(label)});
 // Math 105A
 [["10-08",1],["10-15",2],["10-22",3],["11-12",4],["11-19",5],["12-03",6]].forEach(([d,n])=>add("105","2026-"+d,"11:00","quiz",`Quiz ${n}`,"≈5%"));
 add("105","2026-10-26","09:00","mid","Midterm","25%");
@@ -259,14 +265,18 @@ add("105","2026-12-09","08:00","final","Final","50%");
 add("105","2026-12-11","13:30","final","105LA Lab Final","?");
 // Math 121A
 ["10-02","10-09","10-16","10-23","11-06","11-13","11-20","12-04"].forEach((d,i)=>add("121","2026-"+d,"12:00","hw",`HW ${i+1}`,"5% 合计",i>0));
-["10-06","10-13","10-20","10-27","11-10","11-17","11-24","12-01"].forEach((d,i)=>add("121","2026-"+d,"15:00","quiz",`Quiz ${i+1}`,"20% 合计",i>0));
+// quiz 日期全部是推算：10/6 没有（Leon 确认），第一次 10/13 考 HW2，期中后的 11/3 没有
+["10-13","10-20","10-27","11-10","11-17","11-24","12-01"].forEach((d,i)=>add("121","2026-"+d,"15:00","quiz",`Quiz ${i+1}`,"20% 合计",true));
 add("121","2026-10-30","11:00","mid","Midterm","35%");
 add("121","2026-12-11","08:00","final","Final","40%");
-// Math 140A
-add("140","2026-10-01","13:00","hw","HW 1","≈1.1%");
-["10-08","10-15","10-22","10-29","11-05","11-12","11-19","11-24","12-03"].forEach((d,i)=>add("140","2026-"+d,"13:00","hw",`HW ${i+2}`,"≈1.1%",true));
-add("140","2026-10-30","12:00","mid","Midterm","35%");
-add("140","2026-12-07","13:30","final","Final","55%");
+// Math 140A（Lucas B 班）
+// HW：每周一 12:00 交。HW2 起的编号和日期按这条规律推断（期中当天是否照常交未确认）
+["10-05","10-12","10-19","10-26","11-02","11-09","11-16","11-23","11-30"].forEach((d,i)=>add("140","2026-"+d,"12:00","hw",`HW ${i+1}`,"10% 合计",i>0));
+// Quiz：周一讨论课开头 15 分钟，共 7 次。syllabus 原文写“11/19 没有 quiz”，按共 7 次推算应为 11/9，所以 11/9 之后的 Quiz 5–7 标推断
+["10-05","10-12","10-26","11-02","11-16","11-23","11-30"].forEach((d,i)=>add("140","2026-"+d,"12:00","quiz",`Quiz ${i+1}`,"15% 合计",i>3,true));
+add("140","2026-10-19","16:00","mid","Midterm 1","20%");
+add("140","2026-11-09","16:00","mid","Midterm 2","20%");
+add("140","2026-12-09","16:00","final","Final","35%");
 // Physics 7C
 ["10-05","10-12","10-19","10-26","11-02","11-09","11-16","11-23","11-30"].forEach((d,i)=>add("7c","2026-"+d,"23:59","hw",`HW ${i+1}`,"20% 合计",true));
 ["09-30","10-07","10-14","10-21","10-28","11-04","11-18","11-25","12-02"].forEach(d=>add("7c","2026-"+d,"15:00","quiz","Reading quiz","10% 合计",true));
@@ -292,11 +302,17 @@ function applyCanvas(data){
     if(!CMAP[ev.c])return;
     let base=null;
     if(ev.n!=null&&(ev.k==="hw"||ev.k==="quiz")) base=ITEMS.find(it=>!used.has(it)&&!it.src&&it.c===ev.c&&it.k===ev.k&&it.n===ev.n);
-    else if(ev.k==="mid"||ev.k==="final"){const cand=ITEMS.filter(it=>!used.has(it)&&!it.src&&it.c===ev.c&&it.k===ev.k&&!/LA Lab/.test(it.label));if(cand.length===1)base=cand[0];}
+    else if(ev.k==="mid"||ev.k==="final"){
+      let cand=ITEMS.filter(it=>!used.has(it)&&!it.src&&it.c===ev.c&&it.k===ev.k&&!/LA Lab/.test(it.label));
+      // 一门课有两场期中（140A）：按标题里的编号配对，标题没编号就按同一天配对
+      if(cand.length>1){const n=midNo(ev.title);cand=cand.filter(it=>n!=null?midNo(it.label)===n:it.d===ev.d);}
+      if(cand.length===1)base=cand[0];
+    }
     if(base){
       used.add(base);
-      if(!base.inf&&(base.d!==ev.d||(ev.t&&base.t!==ev.t)))CONFLICTS.push({c:ev.c,label:base.label,from:`${base.d.slice(5).replace("-","/")} ${base.t||""}`,to:`${ev.d.slice(5).replace("-","/")} ${ev.t||""}`});
-      base.d=ev.d; if(ev.t)base.t=ev.t; base.inf=false; base.src="canvas"; base.ctitle=ev.title;
+      const t=base.fixT?null:ev.t;
+      if(!base.inf&&(base.d!==ev.d||(t&&base.t!==t)))CONFLICTS.push({c:ev.c,label:base.label,from:`${base.d.slice(5).replace("-","/")} ${base.t||""}`,to:`${ev.d.slice(5).replace("-","/")} ${(base.fixT?base.t:ev.t)||""}`});
+      base.d=ev.d; if(t)base.t=t; base.inf=false; base.src="canvas"; base.ctitle=ev.title;
     }else{
       ITEMS.push({id:"cv|"+ev.uid,c:ev.c,d:ev.d,t:ev.t,k:ev.k,label:ev.title,w:"",inf:false,src:"canvas"});
     }
