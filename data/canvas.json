@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-04T10:17-07:00",
+ "fetched_at": "2026-10-06T11:46-07:00",
  "events": [
   {
    "uid": "event-assignment-1913605",
@@ -119,6 +119,15 @@
    "title": "Homework 1"
   },
   {
+   "uid": "event-assignment-1936984",
+   "d": "2026-10-05",
+   "t": "13:00",
+   "c": "140",
+   "k": "other",
+   "n": null,
+   "title": "Discussion Mon 10/5"
+  },
+  {
    "uid": "event-assignment-1935989",
    "d": "2026-10-05",
    "t": "13:00",
@@ -126,6 +135,33 @@
    "k": "quiz",
    "n": 1,
    "title": "Quiz 1"
+  },
+  {
+   "uid": "event-assignment-1936978",
+   "d": "2026-10-05",
+   "t": "16:00",
+   "c": "140",
+   "k": "read",
+   "n": null,
+   "title": "Read Sec. 4"
+  },
+  {
+   "uid": "event-assignment-1913609",
+   "d": "2026-10-06",
+   "t": null,
+   "c": "swe",
+   "k": "other",
+   "n": null,
+   "title": "Lecture 4: Use Case for ToDo List App"
+  },
+  {
+   "uid": "event-assignment-1936979",
+   "d": "2026-10-07",
+   "t": "16:00",
+   "c": "140",
+   "k": "read",
+   "n": null,
+   "title": "Read Sec. 5"
   },
   {
    "uid": "event-assignment-override-305497",
@@ -146,6 +182,33 @@
    "title": "Homework 2"
   },
   {
+   "uid": "event-assignment-override-305672",
+   "d": "2026-10-09",
+   "t": "13:30",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Pretest Lab 2 - Week 2 (TAKE IN CLASS)"
+  },
+  {
+   "uid": "event-assignment-override-305370",
+   "d": "2026-10-09",
+   "t": "15:20",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Classwork 2 Upload (group tutorial here)"
+  },
+  {
+   "uid": "event-assignment-1936985",
+   "d": "2026-10-12",
+   "t": "12:00",
+   "c": "140",
+   "k": "hw",
+   "n": 2,
+   "title": "Homework 2"
+  },
+  {
    "uid": "event-assignment-1899639",
    "d": "2026-10-12",
    "t": null,
@@ -153,6 +216,15 @@
    "k": "lab",
    "n": null,
    "title": "7LC Syllabus Quiz (Due Monday at midnight, week 3)"
+  },
+  {
+   "uid": "event-assignment-override-305518",
+   "d": "2026-10-16",
+   "t": "07:00",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Content Homework 2 - assigned week 2, due week 3"
   }
  ]
 }
