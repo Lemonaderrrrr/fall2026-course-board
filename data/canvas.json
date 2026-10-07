@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-06T11:46-07:00",
+ "fetched_at": "2026-10-07T12:12-07:00",
  "events": [
   {
    "uid": "event-assignment-1913605",
@@ -123,7 +123,7 @@
    "d": "2026-10-05",
    "t": "13:00",
    "c": "140",
-   "k": "other",
+   "k": "read",
    "n": null,
    "title": "Discussion Mon 10/5"
   },
@@ -146,6 +146,15 @@
    "title": "Read Sec. 4"
   },
   {
+   "uid": "event-assignment-1937753",
+   "d": "2026-10-06",
+   "t": null,
+   "c": "121",
+   "k": "quiz",
+   "n": 1,
+   "title": "Quiz 1"
+  },
+  {
    "uid": "event-assignment-1913609",
    "d": "2026-10-06",
    "t": null,
@@ -155,6 +164,15 @@
    "title": "Lecture 4: Use Case for ToDo List App"
   },
   {
+   "uid": "event-assignment-1937767",
+   "d": "2026-10-07",
+   "t": "13:00",
+   "c": "140",
+   "k": "other",
+   "n": null,
+   "title": "Discussion Wed 10/7"
+  },
+  {
    "uid": "event-assignment-1936979",
    "d": "2026-10-07",
    "t": "16:00",
@@ -162,6 +180,15 @@
    "k": "read",
    "n": null,
    "title": "Read Sec. 5"
+  },
+  {
+   "uid": "event-assignment-1913589",
+   "d": "2026-10-08",
+   "t": "18:30",
+   "c": "swe",
+   "k": "hw",
+   "n": 1,
+   "title": "Lecture HW1 - Interview pt 1"
   },
   {
    "uid": "event-assignment-override-305497",
@@ -198,6 +225,15 @@
    "k": "lab",
    "n": null,
    "title": "7LC Classwork 2 Upload (group tutorial here)"
+  },
+  {
+   "uid": "event-assignment-1913572",
+   "d": "2026-10-09",
+   "t": "16:00",
+   "c": "swe",
+   "k": "quiz",
+   "n": 2,
+   "title": "QUIZ 2 - Requirements and Use Cases"
   },
   {
    "uid": "event-assignment-1936985",
