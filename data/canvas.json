@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-07T12:12-07:00",
+ "fetched_at": "2026-10-08T12:08-07:00",
  "events": [
   {
    "uid": "event-assignment-1913605",
@@ -243,6 +243,15 @@
    "k": "hw",
    "n": 2,
    "title": "Homework 2"
+  },
+  {
+   "uid": "event-assignment-1938325",
+   "d": "2026-10-12",
+   "t": "13:00",
+   "c": "140",
+   "k": "quiz",
+   "n": 2,
+   "title": "Quiz 2"
   },
   {
    "uid": "event-assignment-1899639",
