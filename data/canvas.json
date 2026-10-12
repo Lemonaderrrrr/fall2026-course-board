@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-11T10:54-07:00",
+ "fetched_at": "2026-10-12T14:33-07:00",
  "events": [
   {
    "uid": "event-assignment-1913605",
@@ -254,6 +254,15 @@
    "title": "Quiz 2"
   },
   {
+   "uid": "event-assignment-1938873",
+   "d": "2026-10-12",
+   "t": "16:00",
+   "c": "140",
+   "k": "read",
+   "n": null,
+   "title": "Read Sec. 7"
+  },
+  {
    "uid": "event-assignment-1899639",
    "d": "2026-10-12",
    "t": null,
@@ -261,6 +270,15 @@
    "k": "lab",
    "n": null,
    "title": "7LC Syllabus Quiz (Due Monday at midnight, week 3)"
+  },
+  {
+   "uid": "event-assignment-1938874",
+   "d": "2026-10-14",
+   "t": "16:00",
+   "c": "140",
+   "k": "read",
+   "n": null,
+   "title": "Read Sec. 8"
   },
   {
    "uid": "event-assignment-override-305518",
@@ -279,6 +297,51 @@
    "k": "hw",
    "n": 3,
    "title": "Homework 3"
+  },
+  {
+   "uid": "event-assignment-override-305698",
+   "d": "2026-10-16",
+   "t": "13:30",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Pretest Lab 3 - Week 3 (TAKE IN CLASS)"
+  },
+  {
+   "uid": "event-assignment-override-305398",
+   "d": "2026-10-16",
+   "t": "15:20",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Classwork 3 Upload (group tutorial here)"
+  },
+  {
+   "uid": "event-assignment-1938875",
+   "d": "2026-10-19",
+   "t": "12:00",
+   "c": "140",
+   "k": "hw",
+   "n": 3,
+   "title": "Homework 3"
+  },
+  {
+   "uid": "event-assignment-1929613",
+   "d": "2026-10-19",
+   "t": "22:00",
+   "c": "105",
+   "k": "lab",
+   "n": null,
+   "title": "105LA Computer Assignment 1"
+  },
+  {
+   "uid": "event-assignment-override-305538",
+   "d": "2026-10-23",
+   "t": "07:00",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Content Homework 3 - assigned week 3, due week 4"
   }
  ]
 }
