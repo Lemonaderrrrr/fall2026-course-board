@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-13T12:44-07:00",
+ "fetched_at": "2026-10-14T10:47-07:00",
  "events": [
   {
    "uid": "event-assignment-1913605",
@@ -272,6 +272,15 @@
    "title": "7LC Syllabus Quiz (Due Monday at midnight, week 3)"
   },
   {
+   "uid": "event-assignment-1913602",
+   "d": "2026-10-13",
+   "t": "23:30",
+   "c": "swe",
+   "k": "other",
+   "n": null,
+   "title": "Lecture 5: Architecture of software familiar to you"
+  },
+  {
    "uid": "event-assignment-1938874",
    "d": "2026-10-14",
    "t": "16:00",
@@ -342,6 +351,15 @@
    "k": "lab",
    "n": null,
    "title": "7LC Content Homework 3 - assigned week 3, due week 4"
+  },
+  {
+   "uid": "event-assignment-1913611",
+   "d": "2026-10-25",
+   "t": null,
+   "c": "swe",
+   "k": "hw",
+   "n": 1,
+   "title": "Homework 1: Requirements Specification"
   }
  ]
 }
