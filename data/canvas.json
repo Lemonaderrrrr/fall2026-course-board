@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-14T10:47-07:00",
+ "fetched_at": "2026-10-15T10:36-07:00",
  "events": [
   {
    "uid": "event-assignment-1913605",
@@ -290,6 +290,15 @@
    "title": "Read Sec. 8"
   },
   {
+   "uid": "event-assignment-1913581",
+   "d": "2026-10-15",
+   "t": "20:00",
+   "c": "swe",
+   "k": "other",
+   "n": null,
+   "title": "Lecture 6: Architecture Review"
+  },
+  {
    "uid": "event-assignment-override-305518",
    "d": "2026-10-16",
    "t": "07:00",
@@ -324,6 +333,15 @@
    "k": "lab",
    "n": null,
    "title": "7LC Classwork 3 Upload (group tutorial here)"
+  },
+  {
+   "uid": "event-assignment-1913607",
+   "d": "2026-10-16",
+   "t": "16:00",
+   "c": "swe",
+   "k": "quiz",
+   "n": 3,
+   "title": "QUIZ 3 - Architecture"
   },
   {
    "uid": "event-assignment-1938875",
