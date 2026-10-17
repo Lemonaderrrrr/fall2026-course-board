@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-16T10:10-07:00",
+ "fetched_at": "2026-10-17T09:08-07:00",
  "events": [
   {
    "uid": "event-assignment-1913605",
@@ -362,6 +362,24 @@
    "title": "105LA Computer Assignment 1"
   },
   {
+   "uid": "event-assignment-1940979",
+   "d": "2026-10-21",
+   "t": "13:00",
+   "c": "140",
+   "k": "other",
+   "n": null,
+   "title": "Discussion Wed 10/21"
+  },
+  {
+   "uid": "event-assignment-1940977",
+   "d": "2026-10-21",
+   "t": "16:00",
+   "c": "140",
+   "k": "read",
+   "n": null,
+   "title": "Read Sec. 9"
+  },
+  {
    "uid": "event-assignment-override-305538",
    "d": "2026-10-23",
    "t": "07:00",
@@ -371,6 +389,24 @@
    "title": "7LC Content Homework 3 - assigned week 3, due week 4"
   },
   {
+   "uid": "event-assignment-1940955",
+   "d": "2026-10-23",
+   "t": "12:00",
+   "c": "121",
+   "k": "hw",
+   "n": 4,
+   "title": "Homework 4"
+  },
+  {
+   "uid": "event-assignment-1940978",
+   "d": "2026-10-23",
+   "t": "16:00",
+   "c": "140",
+   "k": "read",
+   "n": null,
+   "title": "Read Sec. 10"
+  },
+  {
    "uid": "event-assignment-1913611",
    "d": "2026-10-25",
    "t": null,
@@ -378,6 +414,15 @@
    "k": "hw",
    "n": 1,
    "title": "Homework 1: Requirements Specification"
+  },
+  {
+   "uid": "event-assignment-1940980",
+   "d": "2026-10-26",
+   "t": "12:00",
+   "c": "140",
+   "k": "hw",
+   "n": 4,
+   "title": "Homework 4"
   }
  ]
 }
