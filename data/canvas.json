@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-18T09:21-07:00",
+ "fetched_at": "2026-10-19T12:01-07:00",
  "events": [
   {
    "uid": "event-assignment-1913605",
@@ -398,6 +398,24 @@
    "title": "Homework 4"
   },
   {
+   "uid": "event-assignment-override-305717",
+   "d": "2026-10-23",
+   "t": "13:30",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Pretest Lab 4 - Week 4 (TAKE IN CLASS)"
+  },
+  {
+   "uid": "event-assignment-override-305418",
+   "d": "2026-10-23",
+   "t": "15:20",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Classwork 4 Upload (group tutorial here)"
+  },
+  {
    "uid": "event-assignment-1940978",
    "d": "2026-10-23",
    "t": "16:00",
@@ -423,6 +441,15 @@
    "k": "hw",
    "n": 4,
    "title": "Homework 4"
+  },
+  {
+   "uid": "event-assignment-override-305558",
+   "d": "2026-10-30",
+   "t": "07:00",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Content Homework 4 - assigned week 4, due week 5"
   }
  ]
 }
