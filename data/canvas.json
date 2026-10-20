@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-19T12:01-07:00",
+ "fetched_at": "2026-10-20T10:46-07:00",
  "events": [
   {
    "uid": "event-assignment-1913605",
@@ -281,6 +281,15 @@
    "title": "Lecture 5: Architecture of software familiar to you"
   },
   {
+   "uid": "event-assignment-1941408",
+   "d": "2026-10-13",
+   "t": null,
+   "c": "121",
+   "k": "quiz",
+   "n": 2,
+   "title": "Quiz 2"
+  },
+  {
    "uid": "event-assignment-1938874",
    "d": "2026-10-14",
    "t": "16:00",
@@ -360,6 +369,24 @@
    "k": "lab",
    "n": null,
    "title": "105LA Computer Assignment 1"
+  },
+  {
+   "uid": "event-assignment-1913582",
+   "d": "2026-10-20",
+   "t": "23:00",
+   "c": "swe",
+   "k": "other",
+   "n": null,
+   "title": "Lecture 7: Abstraction of Software Engineering Artifacts"
+  },
+  {
+   "uid": "event-assignment-1941410",
+   "d": "2026-10-20",
+   "t": null,
+   "c": "121",
+   "k": "quiz",
+   "n": 3,
+   "title": "Quiz 3"
   },
   {
    "uid": "event-assignment-1940979",
