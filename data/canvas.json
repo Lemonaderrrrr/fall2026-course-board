@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-21T10:54-07:00",
+ "fetched_at": "2026-10-22T10:51-07:00",
  "events": [
   {
    "uid": "event-assignment-1913605",
@@ -407,6 +407,15 @@
    "title": "Read Sec. 9"
   },
   {
+   "uid": "event-assignment-1913583",
+   "d": "2026-10-22",
+   "t": "20:00",
+   "c": "swe",
+   "k": "other",
+   "n": null,
+   "title": "Lecture 8: Class Diagram for ToDo List App"
+  },
+  {
    "uid": "event-assignment-override-305538",
    "d": "2026-10-23",
    "t": "07:00",
@@ -450,6 +459,15 @@
    "k": "read",
    "n": null,
    "title": "Read Sec. 10"
+  },
+  {
+   "uid": "event-assignment-1913571",
+   "d": "2026-10-23",
+   "t": "16:00",
+   "c": "swe",
+   "k": "quiz",
+   "n": 4,
+   "title": "QUIZ 4 - Design Models"
   },
   {
    "uid": "event-assignment-1913611",
