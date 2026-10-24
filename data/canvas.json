@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-23T10:43-07:00",
+ "fetched_at": "2026-10-24T09:26-07:00",
  "events": [
   {
    "uid": "event-assignment-1913605",
@@ -495,6 +495,15 @@
    "k": "lab",
    "n": null,
    "title": "7LC Content Homework 4 - assigned week 4, due week 5"
+  },
+  {
+   "uid": "event-assignment-1942376",
+   "d": "2026-10-30",
+   "t": "12:00",
+   "c": "121",
+   "k": "hw",
+   "n": 5,
+   "title": "Homework 5"
   }
  ]
 }
