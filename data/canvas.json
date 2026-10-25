@@ -1,15 +1,6 @@
 {
- "fetched_at": "2026-10-24T09:26-07:00",
+ "fetched_at": "2026-10-25T09:57-07:00",
  "events": [
-  {
-   "uid": "event-assignment-1913605",
-   "d": "2026-09-24",
-   "t": null,
-   "c": "swe",
-   "k": "other",
-   "n": null,
-   "title": "Lecture 1: Who are you?"
-  },
   {
    "uid": "event-assignment-1900497",
    "d": "2026-09-28",
