@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-25T09:57-07:00",
+ "fetched_at": "2026-10-26T12:01-07:00",
  "events": [
   {
    "uid": "event-assignment-1900497",
@@ -479,6 +479,33 @@
    "title": "Homework 4"
   },
   {
+   "uid": "event-assignment-1942526",
+   "d": "2026-10-26",
+   "t": "13:00",
+   "c": "140",
+   "k": "other",
+   "n": null,
+   "title": "Discussion Mon 10/26"
+  },
+  {
+   "uid": "event-assignment-1942524",
+   "d": "2026-10-26",
+   "t": "13:00",
+   "c": "140",
+   "k": "quiz",
+   "n": 3,
+   "title": "Quiz 3"
+  },
+  {
+   "uid": "event-assignment-1942535",
+   "d": "2026-10-28",
+   "t": "16:00",
+   "c": "140",
+   "k": "read",
+   "n": null,
+   "title": "Read Sec. 11"
+  },
+  {
    "uid": "event-assignment-override-305558",
    "d": "2026-10-30",
    "t": "07:00",
@@ -495,6 +522,42 @@
    "k": "hw",
    "n": 5,
    "title": "Homework 5"
+  },
+  {
+   "uid": "event-assignment-override-305724",
+   "d": "2026-10-30",
+   "t": "13:30",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Pretest Lab 5 - Week 5 (TAKE IN CLASS)"
+  },
+  {
+   "uid": "event-assignment-override-305438",
+   "d": "2026-10-30",
+   "t": "15:20",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Classwork 5 Upload (group tutorial here)"
+  },
+  {
+   "uid": "event-assignment-1942534",
+   "d": "2026-11-02",
+   "t": "12:00",
+   "c": "140",
+   "k": "hw",
+   "n": 5,
+   "title": "Homework 5"
+  },
+  {
+   "uid": "event-assignment-override-305578",
+   "d": "2026-11-06",
+   "t": "07:00",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Content Homework 5 - assigned week 5, due week 6"
   }
  ]
 }
