@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-26T12:01-07:00",
+ "fetched_at": "2026-10-27T11:33-07:00",
  "events": [
   {
    "uid": "event-assignment-1900497",
@@ -497,6 +497,15 @@
    "title": "Quiz 3"
   },
   {
+   "uid": "event-assignment-1913570",
+   "d": "2026-10-27",
+   "t": "23:00",
+   "c": "swe",
+   "k": "other",
+   "n": null,
+   "title": "Lecture 9: Usability Fail/Success"
+  },
+  {
    "uid": "event-assignment-1942535",
    "d": "2026-10-28",
    "t": "16:00",
@@ -542,6 +551,15 @@
    "title": "7LC Classwork 5 Upload (group tutorial here)"
   },
   {
+   "uid": "event-assignment-1913612",
+   "d": "2026-11-01",
+   "t": null,
+   "c": "swe",
+   "k": "hw",
+   "n": 2,
+   "title": "Homework 2A: Version Control with Git, part A"
+  },
+  {
    "uid": "event-assignment-1942534",
    "d": "2026-11-02",
    "t": "12:00",
@@ -558,6 +576,24 @@
    "k": "lab",
    "n": null,
    "title": "7LC Content Homework 5 - assigned week 5, due week 6"
+  },
+  {
+   "uid": "event-assignment-1913613",
+   "d": "2026-11-08",
+   "t": null,
+   "c": "swe",
+   "k": "hw",
+   "n": 2,
+   "title": "Homework 2B: Version Control with Git, part B"
+  },
+  {
+   "uid": "event-assignment-1913614",
+   "d": "2026-11-15",
+   "t": null,
+   "c": "swe",
+   "k": "hw",
+   "n": 2,
+   "title": "Homework 2C: Version Control with Git, Part C"
   }
  ]
 }
