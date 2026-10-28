@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-27T11:33-07:00",
+ "fetched_at": "2026-10-28T11:39-07:00",
  "events": [
   {
    "uid": "event-assignment-1900497",
@@ -254,15 +254,6 @@
    "title": "Read Sec. 7"
   },
   {
-   "uid": "event-assignment-1899639",
-   "d": "2026-10-12",
-   "t": null,
-   "c": "7c",
-   "k": "lab",
-   "n": null,
-   "title": "7LC Syllabus Quiz (Due Monday at midnight, week 3)"
-  },
-  {
    "uid": "event-assignment-1913602",
    "d": "2026-10-13",
    "t": "23:30",
@@ -342,6 +333,15 @@
    "k": "quiz",
    "n": 3,
    "title": "QUIZ 3 - Architecture"
+  },
+  {
+   "uid": "event-assignment-1899639",
+   "d": "2026-10-18",
+   "t": null,
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Syllabus Quiz (Due Monday at midnight, week 3)"
   },
   {
    "uid": "event-assignment-1938875",
@@ -504,6 +504,24 @@
    "k": "other",
    "n": null,
    "title": "Lecture 9: Usability Fail/Success"
+  },
+  {
+   "uid": "event-assignment-1941418",
+   "d": "2026-10-27",
+   "t": null,
+   "c": "121",
+   "k": "quiz",
+   "n": 4,
+   "title": "Quiz 4"
+  },
+  {
+   "uid": "event-assignment-1943540",
+   "d": "2026-10-28",
+   "t": "13:00",
+   "c": "140",
+   "k": "other",
+   "n": null,
+   "title": "Discussion Wed 10/28"
   },
   {
    "uid": "event-assignment-1942535",
