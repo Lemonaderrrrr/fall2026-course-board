@@ -1,24 +1,6 @@
 {
- "fetched_at": "2026-10-29T11:48-07:00",
+ "fetched_at": "2026-10-30T11:25-07:00",
  "events": [
-  {
-   "uid": "event-assignment-1913617",
-   "d": "2026-09-29",
-   "t": "18:00",
-   "c": "swe",
-   "k": "read",
-   "n": null,
-   "title": "Parnas-MultiPerson"
-  },
-  {
-   "uid": "event-assignment-1913598",
-   "d": "2026-09-29",
-   "t": "20:00",
-   "c": "swe",
-   "k": "other",
-   "n": null,
-   "title": "Lecture 2: No Silver Bullet"
-  },
   {
    "uid": "event-assignment-1935236",
    "d": "2026-09-30",
