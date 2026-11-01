@@ -1,24 +1,6 @@
 {
- "fetched_at": "2026-10-31T10:30-07:00",
+ "fetched_at": "2026-11-01T10:16-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1913594",
-   "d": "2026-10-01",
-   "t": null,
-   "c": "swe",
-   "k": "other",
-   "n": null,
-   "title": "Lecture 3: Application Context of ToDo List App"
-  },
-  {
-   "uid": "event-assignment-1913616",
-   "d": "2026-10-01",
-   "t": null,
-   "c": "swe",
-   "k": "read",
-   "n": null,
-   "title": "No Silver Bullet - Article Link"
-  },
   {
    "uid": "event-assignment-1932591",
    "d": "2026-10-02",
