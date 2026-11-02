@@ -1,33 +1,6 @@
 {
- "fetched_at": "2026-11-01T10:16-08:00",
+ "fetched_at": "2026-11-02T14:09-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1932591",
-   "d": "2026-10-02",
-   "t": "12:00",
-   "c": "121",
-   "k": "hw",
-   "n": 1,
-   "title": "Homework 1"
-  },
-  {
-   "uid": "event-assignment-1913574",
-   "d": "2026-10-02",
-   "t": "16:00",
-   "c": "swe",
-   "k": "quiz",
-   "n": 1,
-   "title": "QUIZ 1 - What is SE"
-  },
-  {
-   "uid": "event-assignment-1900499",
-   "d": "2026-10-02",
-   "t": null,
-   "c": "140",
-   "k": "read",
-   "n": null,
-   "title": "Read Sec. 3"
-  },
   {
    "uid": "event-assignment-1899645",
    "d": "2026-10-03",
@@ -542,6 +515,42 @@
    "title": "Homework 5"
   },
   {
+   "uid": "event-assignment-1944536",
+   "d": "2026-11-02",
+   "t": "13:00",
+   "c": "140",
+   "k": "other",
+   "n": null,
+   "title": "Discussion Mon 11/2"
+  },
+  {
+   "uid": "event-assignment-1944538",
+   "d": "2026-11-02",
+   "t": "13:00",
+   "c": "140",
+   "k": "quiz",
+   "n": 4,
+   "title": "Quiz 4"
+  },
+  {
+   "uid": "event-assignment-1944537",
+   "d": "2026-11-04",
+   "t": "13:00",
+   "c": "140",
+   "k": "other",
+   "n": null,
+   "title": "Discussion Wed 11/4"
+  },
+  {
+   "uid": "event-assignment-1944532",
+   "d": "2026-11-04",
+   "t": "16:00",
+   "c": "140",
+   "k": "read",
+   "n": null,
+   "title": "Read Sec. 12"
+  },
+  {
    "uid": "event-assignment-override-305578",
    "d": "2026-11-06",
    "t": "07:00",
@@ -551,6 +560,33 @@
    "title": "7LC Content Homework 5 - assigned week 5, due week 6"
   },
   {
+   "uid": "event-assignment-override-305748",
+   "d": "2026-11-06",
+   "t": "13:30",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Pretest Lab 6 - Week 6 (TAKE IN CLASS)"
+  },
+  {
+   "uid": "event-assignment-override-305458",
+   "d": "2026-11-06",
+   "t": "15:20",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Classwork 6 Upload (group tutorial here)"
+  },
+  {
+   "uid": "event-assignment-1944533",
+   "d": "2026-11-06",
+   "t": "16:00",
+   "c": "140",
+   "k": "read",
+   "n": null,
+   "title": "Read Sec. 14"
+  },
+  {
    "uid": "event-assignment-1913613",
    "d": "2026-11-08",
    "t": null,
@@ -558,6 +594,33 @@
    "k": "hw",
    "n": 2,
    "title": "Homework 2B: Version Control with Git, part B"
+  },
+  {
+   "uid": "event-assignment-1944530",
+   "d": "2026-11-09",
+   "t": "12:00",
+   "c": "140",
+   "k": "hw",
+   "n": 6,
+   "title": "Homework 6"
+  },
+  {
+   "uid": "event-assignment-1929614",
+   "d": "2026-11-09",
+   "t": "22:00",
+   "c": "105",
+   "k": "lab",
+   "n": null,
+   "title": "105LA Computer Assignment 2"
+  },
+  {
+   "uid": "event-assignment-override-305598",
+   "d": "2026-11-13",
+   "t": "07:00",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Content Homework 6 - assigned week 6, due week 7"
   },
   {
    "uid": "event-assignment-1913614",
