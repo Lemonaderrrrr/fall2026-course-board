@@ -1,15 +1,6 @@
 {
- "fetched_at": "2026-11-02T14:09-08:00",
+ "fetched_at": "2026-11-03T11:57-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1899645",
-   "d": "2026-10-03",
-   "t": null,
-   "c": "7c",
-   "k": "lab",
-   "n": null,
-   "title": "7LC Classwork 1 Upload (group tutorial here)"
-  },
   {
    "uid": "event-assignment-1901461",
    "d": "2026-10-05",
