@@ -1,15 +1,6 @@
 {
- "fetched_at": "2026-11-03T11:57-08:00",
+ "fetched_at": "2026-11-04T12:17-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1901461",
-   "d": "2026-10-05",
-   "t": "12:00",
-   "c": "140",
-   "k": "hw",
-   "n": 1,
-   "title": "Homework 1"
-  },
   {
    "uid": "event-assignment-1936984",
    "d": "2026-10-05",
@@ -488,6 +479,15 @@
    "title": "QUIZ 5 - User Orientation"
   },
   {
+   "uid": "event-assignment-1944448",
+   "d": "2026-10-30",
+   "t": null,
+   "c": "121",
+   "k": "mid",
+   "n": null,
+   "title": "Midterm"
+  },
+  {
    "uid": "event-assignment-1913612",
    "d": "2026-11-01",
    "t": null,
@@ -522,6 +522,15 @@
    "k": "quiz",
    "n": 4,
    "title": "Quiz 4"
+  },
+  {
+   "uid": "event-assignment-1913591",
+   "d": "2026-11-03",
+   "t": "23:30",
+   "c": "swe",
+   "k": "other",
+   "n": null,
+   "title": "Lecture 11: Testing ToDo List App"
   },
   {
    "uid": "event-assignment-1944537",
