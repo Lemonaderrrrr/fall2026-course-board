@@ -1,33 +1,6 @@
 {
- "fetched_at": "2026-11-04T12:17-08:00",
+ "fetched_at": "2026-11-05T12:28-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1936984",
-   "d": "2026-10-05",
-   "t": "13:00",
-   "c": "140",
-   "k": "read",
-   "n": null,
-   "title": "Discussion Mon 10/5"
-  },
-  {
-   "uid": "event-assignment-1935989",
-   "d": "2026-10-05",
-   "t": "13:00",
-   "c": "140",
-   "k": "quiz",
-   "n": 1,
-   "title": "Quiz 1"
-  },
-  {
-   "uid": "event-assignment-1936978",
-   "d": "2026-10-05",
-   "t": "16:00",
-   "c": "140",
-   "k": "read",
-   "n": null,
-   "title": "Read Sec. 4"
-  },
   {
    "uid": "event-assignment-1937753",
    "d": "2026-10-06",
@@ -551,6 +524,15 @@
    "title": "Read Sec. 12"
   },
   {
+   "uid": "event-assignment-1913593",
+   "d": "2026-11-05",
+   "t": "23:00",
+   "c": "swe",
+   "k": "other",
+   "n": null,
+   "title": "Lecture 12: Software bug you have encountered"
+  },
+  {
    "uid": "event-assignment-override-305578",
    "d": "2026-11-06",
    "t": "07:00",
@@ -585,6 +567,15 @@
    "k": "read",
    "n": null,
    "title": "Read Sec. 14"
+  },
+  {
+   "uid": "event-assignment-1913576",
+   "d": "2026-11-06",
+   "t": "16:00",
+   "c": "swe",
+   "k": "quiz",
+   "n": 6,
+   "title": "QUIZ 6 - Testing1"
   },
   {
    "uid": "event-assignment-1913613",
