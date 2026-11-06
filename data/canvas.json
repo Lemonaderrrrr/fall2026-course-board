@@ -1,24 +1,6 @@
 {
- "fetched_at": "2026-11-05T12:28-08:00",
+ "fetched_at": "2026-11-06T11:50-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1937753",
-   "d": "2026-10-06",
-   "t": null,
-   "c": "121",
-   "k": "quiz",
-   "n": 1,
-   "title": "Quiz 1"
-  },
-  {
-   "uid": "event-assignment-1913609",
-   "d": "2026-10-06",
-   "t": null,
-   "c": "swe",
-   "k": "other",
-   "n": null,
-   "title": "Lecture 4: Use Case for ToDo List App"
-  },
   {
    "uid": "event-assignment-1937767",
    "d": "2026-10-07",
@@ -458,7 +440,7 @@
    "c": "121",
    "k": "mid",
    "n": null,
-   "title": "Midterm"
+   "title": "Midterm pt. 1"
   },
   {
    "uid": "event-assignment-1913612",
