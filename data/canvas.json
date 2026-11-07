@@ -1,24 +1,6 @@
 {
- "fetched_at": "2026-11-06T11:50-08:00",
+ "fetched_at": "2026-11-07T09:56-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1937767",
-   "d": "2026-10-07",
-   "t": "13:00",
-   "c": "140",
-   "k": "other",
-   "n": null,
-   "title": "Discussion Wed 10/7"
-  },
-  {
-   "uid": "event-assignment-1936979",
-   "d": "2026-10-07",
-   "t": "16:00",
-   "c": "140",
-   "k": "read",
-   "n": null,
-   "title": "Read Sec. 5"
-  },
   {
    "uid": "event-assignment-1913589",
    "d": "2026-10-08",
@@ -596,6 +578,33 @@
    "title": "7LC Content Homework 6 - assigned week 6, due week 7"
   },
   {
+   "uid": "event-assignment-1946170",
+   "d": "2026-11-13",
+   "t": "12:00",
+   "c": "121",
+   "k": "hw",
+   "n": 6,
+   "title": "Homework 6"
+  },
+  {
+   "uid": "event-assignment-1899629",
+   "d": "2026-11-13",
+   "t": null,
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Pretest Lab 7 - Week 7 (TAKE IN CLASS) (SKIP IN Fall 2026, full credit)"
+  },
+  {
+   "uid": "event-assignment-1899651",
+   "d": "2026-11-14",
+   "t": null,
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Classwork 7 Upload (group tutorial here) - DUE DATE AT THE END OF THE WEEK FOR THIS WEEK ONLY"
+  },
+  {
    "uid": "event-assignment-1913614",
    "d": "2026-11-15",
    "t": null,
@@ -603,6 +612,15 @@
    "k": "hw",
    "n": 2,
    "title": "Homework 2C: Version Control with Git, Part C"
+  },
+  {
+   "uid": "event-assignment-override-305607",
+   "d": "2026-11-20",
+   "t": "08:00",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Content Homework 7 - assigned week 7, due week 8"
   }
  ]
 }
