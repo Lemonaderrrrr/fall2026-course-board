@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-09T14:52-08:00",
+ "fetched_at": "2026-11-10T12:13-08:00",
  "events": [
   {
    "uid": "event-assignment-1936985",
@@ -506,6 +506,15 @@
    "title": "Homework 6"
   },
   {
+   "uid": "event-assignment-1947119",
+   "d": "2026-11-09",
+   "t": "17:00",
+   "c": "140",
+   "k": "mid",
+   "n": null,
+   "title": "Midterm 2"
+  },
+  {
    "uid": "event-assignment-1929614",
    "d": "2026-11-09",
    "t": "22:00",
@@ -513,6 +522,15 @@
    "k": "lab",
    "n": null,
    "title": "105LA Computer Assignment 2"
+  },
+  {
+   "uid": "event-assignment-1913604",
+   "d": "2026-11-10",
+   "t": null,
+   "c": "swe",
+   "k": "other",
+   "n": null,
+   "title": "Lecture 13: Testing Matrix"
   },
   {
    "uid": "event-assignment-override-305598",
@@ -531,6 +549,15 @@
    "k": "hw",
    "n": 6,
    "title": "Homework 6"
+  },
+  {
+   "uid": "event-assignment-1947121",
+   "d": "2026-11-13",
+   "t": "16:00",
+   "c": "140",
+   "k": "read",
+   "n": null,
+   "title": "Read Sec. 15 (Just the part on alternating series)"
   },
   {
    "uid": "event-assignment-1899629",
@@ -560,6 +587,15 @@
    "title": "Homework 2C: Version Control with Git, Part C"
   },
   {
+   "uid": "event-assignment-1947120",
+   "d": "2026-11-16",
+   "t": "12:00",
+   "c": "140",
+   "k": "hw",
+   "n": 7,
+   "title": "Homework 7"
+  },
+  {
    "uid": "event-assignment-override-305607",
    "d": "2026-11-20",
    "t": "08:00",
@@ -567,6 +603,15 @@
    "k": "lab",
    "n": null,
    "title": "7LC Content Homework 7 - assigned week 7, due week 8"
+  },
+  {
+   "uid": "event-assignment-1913615",
+   "d": "2026-11-26",
+   "t": null,
+   "c": "swe",
+   "k": "hw",
+   "n": 3,
+   "title": "Homework 3: Black-Box Testing of Achieve"
   }
  ]
 }
