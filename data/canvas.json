@@ -1,24 +1,6 @@
 {
- "fetched_at": "2026-11-12T12:39-08:00",
+ "fetched_at": "2026-11-13T12:19-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1913602",
-   "d": "2026-10-13",
-   "t": "23:30",
-   "c": "swe",
-   "k": "other",
-   "n": null,
-   "title": "Lecture 5: Architecture of software familiar to you"
-  },
-  {
-   "uid": "event-assignment-1941408",
-   "d": "2026-10-13",
-   "t": null,
-   "c": "121",
-   "k": "quiz",
-   "n": 2,
-   "title": "Quiz 2"
-  },
   {
    "uid": "event-assignment-1938874",
    "d": "2026-10-14",
@@ -506,6 +488,15 @@
    "title": "Lecture 13: Testing Matrix"
   },
   {
+   "uid": "event-assignment-1913569",
+   "d": "2026-11-12",
+   "t": null,
+   "c": "swe",
+   "k": "other",
+   "n": null,
+   "title": "Lecture 14: Node/Edge Coverage"
+  },
+  {
    "uid": "event-assignment-override-305598",
    "d": "2026-11-13",
    "t": "07:00",
@@ -531,6 +522,15 @@
    "k": "read",
    "n": null,
    "title": "Read Sec. 15 (Just the part on alternating series)"
+  },
+  {
+   "uid": "event-assignment-1913600",
+   "d": "2026-11-13",
+   "t": "16:00",
+   "c": "swe",
+   "k": "quiz",
+   "n": 7,
+   "title": "QUIZ 7 - Testing 2"
   },
   {
    "uid": "event-assignment-1899629",
@@ -585,6 +585,15 @@
    "k": "hw",
    "n": 3,
    "title": "Homework 3: Black-Box Testing of Achieve"
+  },
+  {
+   "uid": "event-assignment-1913580",
+   "d": "2026-12-02",
+   "t": "23:30",
+   "c": "swe",
+   "k": "other",
+   "n": null,
+   "title": "Mid-quarter evaluative feedback"
   }
  ]
 }
