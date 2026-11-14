@@ -1,15 +1,6 @@
 {
- "fetched_at": "2026-11-13T12:19-08:00",
+ "fetched_at": "2026-11-14T10:39-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1938874",
-   "d": "2026-10-14",
-   "t": "16:00",
-   "c": "140",
-   "k": "read",
-   "n": null,
-   "title": "Read Sec. 8"
-  },
   {
    "uid": "event-assignment-1913581",
    "d": "2026-10-15",
@@ -236,7 +227,7 @@
    "title": "Lecture 9: Usability Fail/Success"
   },
   {
-   "uid": "event-assignment-1941418",
+   "uid": "event-assignment-1948496",
    "d": "2026-10-27",
    "t": null,
    "c": "121",
@@ -479,6 +470,15 @@
    "title": "105LA Computer Assignment 2"
   },
   {
+   "uid": "event-assignment-1948497",
+   "d": "2026-11-10",
+   "t": null,
+   "c": "121",
+   "k": "quiz",
+   "n": 5,
+   "title": "Quiz 5"
+  },
+  {
    "uid": "event-assignment-1913604",
    "d": "2026-11-10",
    "t": null,
@@ -576,6 +576,15 @@
    "k": "lab",
    "n": null,
    "title": "7LC Content Homework 7 - assigned week 7, due week 8"
+  },
+  {
+   "uid": "event-assignment-1948514",
+   "d": "2026-11-20",
+   "t": "12:00",
+   "c": "121",
+   "k": "hw",
+   "n": 7,
+   "title": "Homework 7"
   },
   {
    "uid": "event-assignment-1913615",
