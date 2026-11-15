@@ -1,24 +1,6 @@
 {
- "fetched_at": "2026-11-14T10:39-08:00",
+ "fetched_at": "2026-11-15T11:14-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1913581",
-   "d": "2026-10-15",
-   "t": "20:00",
-   "c": "swe",
-   "k": "other",
-   "n": null,
-   "title": "Lecture 6: Architecture Review"
-  },
-  {
-   "uid": "event-assignment-override-305518",
-   "d": "2026-10-16",
-   "t": "07:00",
-   "c": "7c",
-   "k": "lab",
-   "n": null,
-   "title": "7LC Content Homework 2 - assigned week 2, due week 3"
-  },
   {
    "uid": "event-assignment-1938451",
    "d": "2026-10-16",
