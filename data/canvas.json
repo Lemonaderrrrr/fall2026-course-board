@@ -1,42 +1,6 @@
 {
- "fetched_at": "2026-11-15T11:14-08:00",
+ "fetched_at": "2026-11-16T14:44-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1938451",
-   "d": "2026-10-16",
-   "t": "12:00",
-   "c": "121",
-   "k": "hw",
-   "n": 3,
-   "title": "Homework 3"
-  },
-  {
-   "uid": "event-assignment-override-305698",
-   "d": "2026-10-16",
-   "t": "13:30",
-   "c": "7c",
-   "k": "lab",
-   "n": null,
-   "title": "7LC Pretest Lab 3 - Week 3 (TAKE IN CLASS)"
-  },
-  {
-   "uid": "event-assignment-override-305398",
-   "d": "2026-10-16",
-   "t": "15:20",
-   "c": "7c",
-   "k": "lab",
-   "n": null,
-   "title": "7LC Classwork 3 Upload (group tutorial here)"
-  },
-  {
-   "uid": "event-assignment-1913607",
-   "d": "2026-10-16",
-   "t": "16:00",
-   "c": "swe",
-   "k": "quiz",
-   "n": 3,
-   "title": "QUIZ 3 - Architecture"
-  },
   {
    "uid": "event-assignment-1899639",
    "d": "2026-10-18",
@@ -551,6 +515,42 @@
    "title": "Homework 7"
   },
   {
+   "uid": "event-assignment-1949184",
+   "d": "2026-11-16",
+   "t": "13:00",
+   "c": "140",
+   "k": "other",
+   "n": null,
+   "title": "Discussion Mon 11/16"
+  },
+  {
+   "uid": "event-assignment-1949188",
+   "d": "2026-11-16",
+   "t": "13:00",
+   "c": "140",
+   "k": "quiz",
+   "n": 5,
+   "title": "Quiz 5"
+  },
+  {
+   "uid": "event-assignment-1949190",
+   "d": "2026-11-18",
+   "t": "13:00",
+   "c": "140",
+   "k": "other",
+   "n": null,
+   "title": "Discussion Wed 11/18"
+  },
+  {
+   "uid": "event-assignment-1949189",
+   "d": "2026-11-18",
+   "t": "16:00",
+   "c": "140",
+   "k": "read",
+   "n": null,
+   "title": "Read Sec. 17"
+  },
+  {
    "uid": "event-assignment-override-305607",
    "d": "2026-11-20",
    "t": "08:00",
@@ -569,6 +569,33 @@
    "title": "Homework 7"
   },
   {
+   "uid": "event-assignment-override-305776",
+   "d": "2026-11-20",
+   "t": "13:30",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Pretest Lab 8 - Week 8 (TAKE IN CLASS)"
+  },
+  {
+   "uid": "event-assignment-override-305478",
+   "d": "2026-11-20",
+   "t": "15:20",
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Classwork 8 Upload (group tutorial here)"
+  },
+  {
+   "uid": "event-assignment-1949187",
+   "d": "2026-11-23",
+   "t": "12:00",
+   "c": "140",
+   "k": "hw",
+   "n": 8,
+   "title": "Homework 8"
+  },
+  {
    "uid": "event-assignment-1913615",
    "d": "2026-11-26",
    "t": null,
@@ -576,6 +603,15 @@
    "k": "hw",
    "n": 3,
    "title": "Homework 3: Black-Box Testing of Achieve"
+  },
+  {
+   "uid": "event-assignment-1899615",
+   "d": "2026-11-29",
+   "t": null,
+   "c": "7c",
+   "k": "lab",
+   "n": null,
+   "title": "7LC Content Homework 8, due on Sunday of Thanksgiving Break (Nov 29, 11:59pm)"
   },
   {
    "uid": "event-assignment-1913580",
