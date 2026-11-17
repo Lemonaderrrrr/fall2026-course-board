@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-16T14:44-08:00",
+ "fetched_at": "2026-11-17T13:30-08:00",
  "events": [
   {
    "uid": "event-assignment-1899639",
@@ -531,6 +531,15 @@
    "k": "quiz",
    "n": 5,
    "title": "Quiz 5"
+  },
+  {
+   "uid": "event-assignment-1913585",
+   "d": "2026-11-17",
+   "t": "23:30",
+   "c": "swe",
+   "k": "other",
+   "n": null,
+   "title": "Lecture 15: SW Process Question"
   },
   {
    "uid": "event-assignment-1949190",
