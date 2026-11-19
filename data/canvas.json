@@ -1,15 +1,6 @@
 {
- "fetched_at": "2026-11-18T13:05-08:00",
+ "fetched_at": "2026-11-19T13:10-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1929613",
-   "d": "2026-10-19",
-   "t": "22:00",
-   "c": "105",
-   "k": "lab",
-   "n": null,
-   "title": "105LA Computer Assignment 1"
-  },
   {
    "uid": "event-assignment-1913582",
    "d": "2026-10-20",
@@ -576,6 +567,15 @@
    "k": "lab",
    "n": null,
    "title": "7LC Classwork 8 Upload (group tutorial here)"
+  },
+  {
+   "uid": "event-assignment-1913577",
+   "d": "2026-11-20",
+   "t": "16:00",
+   "c": "swe",
+   "k": "quiz",
+   "n": 8,
+   "title": "QUIZ 8 - Process Models"
   },
   {
    "uid": "event-assignment-1949187",
