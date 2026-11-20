@@ -1,24 +1,6 @@
 {
- "fetched_at": "2026-11-19T13:10-08:00",
+ "fetched_at": "2026-11-20T12:55-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1913582",
-   "d": "2026-10-20",
-   "t": "23:00",
-   "c": "swe",
-   "k": "other",
-   "n": null,
-   "title": "Lecture 7: Abstraction of Software Engineering Artifacts"
-  },
-  {
-   "uid": "event-assignment-1941410",
-   "d": "2026-10-20",
-   "t": null,
-   "c": "121",
-   "k": "quiz",
-   "n": 3,
-   "title": "Quiz 3"
-  },
   {
    "uid": "event-assignment-1940979",
    "d": "2026-10-21",
@@ -531,6 +513,15 @@
    "k": "read",
    "n": null,
    "title": "Read Sec. 17"
+  },
+  {
+   "uid": "event-assignment-1913590",
+   "d": "2026-11-19",
+   "t": "23:00",
+   "c": "swe",
+   "k": "other",
+   "n": null,
+   "title": "Lecture 16: Describe Spiral Process"
   },
   {
    "uid": "event-assignment-override-305607",
