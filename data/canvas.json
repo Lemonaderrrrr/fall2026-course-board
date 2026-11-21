@@ -1,24 +1,6 @@
 {
- "fetched_at": "2026-11-20T12:55-08:00",
+ "fetched_at": "2026-11-21T11:55-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1940979",
-   "d": "2026-10-21",
-   "t": "13:00",
-   "c": "140",
-   "k": "other",
-   "n": null,
-   "title": "Discussion Wed 10/21"
-  },
-  {
-   "uid": "event-assignment-1940977",
-   "d": "2026-10-21",
-   "t": "16:00",
-   "c": "140",
-   "k": "read",
-   "n": null,
-   "title": "Read Sec. 9"
-  },
   {
    "uid": "event-assignment-1913583",
    "d": "2026-10-22",
@@ -594,6 +576,15 @@
    "k": "lab",
    "n": null,
    "title": "7LC Content Homework 8, due on Sunday of Thanksgiving Break (Nov 29, 11:59pm)"
+  },
+  {
+   "uid": "event-assignment-1952045",
+   "d": "2026-11-30",
+   "t": "21:00",
+   "c": "121",
+   "k": "hw",
+   "n": 8,
+   "title": "Homework 8"
   },
   {
    "uid": "event-assignment-1913580",
