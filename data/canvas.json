@@ -1,33 +1,6 @@
 {
- "fetched_at": "2026-11-21T11:55-08:00",
+ "fetched_at": "2026-11-22T12:08-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1913583",
-   "d": "2026-10-22",
-   "t": "20:00",
-   "c": "swe",
-   "k": "other",
-   "n": null,
-   "title": "Lecture 8: Class Diagram for ToDo List App"
-  },
-  {
-   "uid": "event-assignment-override-305538",
-   "d": "2026-10-23",
-   "t": "07:00",
-   "c": "7c",
-   "k": "lab",
-   "n": null,
-   "title": "7LC Content Homework 3 - assigned week 3, due week 4"
-  },
-  {
-   "uid": "event-assignment-1940955",
-   "d": "2026-10-23",
-   "t": "12:00",
-   "c": "121",
-   "k": "hw",
-   "n": 4,
-   "title": "Homework 4"
-  },
   {
    "uid": "event-assignment-override-305717",
    "d": "2026-10-23",
@@ -560,6 +533,33 @@
    "title": "Homework 8"
   },
   {
+   "uid": "event-assignment-1952327",
+   "d": "2026-11-23",
+   "t": "13:00",
+   "c": "140",
+   "k": "other",
+   "n": null,
+   "title": "Discussion Mon 11/23"
+  },
+  {
+   "uid": "event-assignment-1952328",
+   "d": "2026-11-23",
+   "t": "13:00",
+   "c": "140",
+   "k": "quiz",
+   "n": 6,
+   "title": "Quiz 6"
+  },
+  {
+   "uid": "event-assignment-1952325",
+   "d": "2026-11-23",
+   "t": null,
+   "c": "140",
+   "k": "read",
+   "n": null,
+   "title": "Read Sec. 18"
+  },
+  {
    "uid": "event-assignment-1913615",
    "d": "2026-11-26",
    "t": null,
@@ -576,6 +576,15 @@
    "k": "lab",
    "n": null,
    "title": "7LC Content Homework 8, due on Sunday of Thanksgiving Break (Nov 29, 11:59pm)"
+  },
+  {
+   "uid": "event-assignment-1952329",
+   "d": "2026-11-30",
+   "t": "12:00",
+   "c": "140",
+   "k": "hw",
+   "n": 9,
+   "title": "Homework 9"
   },
   {
    "uid": "event-assignment-1952045",
