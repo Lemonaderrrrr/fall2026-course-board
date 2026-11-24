@@ -1,42 +1,6 @@
 {
- "fetched_at": "2026-11-22T12:08-08:00",
+ "fetched_at": "2026-11-23T16:35-08:00",
  "events": [
-  {
-   "uid": "event-assignment-override-305717",
-   "d": "2026-10-23",
-   "t": "13:30",
-   "c": "7c",
-   "k": "lab",
-   "n": null,
-   "title": "7LC Pretest Lab 4 - Week 4 (TAKE IN CLASS)"
-  },
-  {
-   "uid": "event-assignment-override-305418",
-   "d": "2026-10-23",
-   "t": "15:20",
-   "c": "7c",
-   "k": "lab",
-   "n": null,
-   "title": "7LC Classwork 4 Upload (group tutorial here)"
-  },
-  {
-   "uid": "event-assignment-1940978",
-   "d": "2026-10-23",
-   "t": "16:00",
-   "c": "140",
-   "k": "read",
-   "n": null,
-   "title": "Read Sec. 10"
-  },
-  {
-   "uid": "event-assignment-1913571",
-   "d": "2026-10-23",
-   "t": "16:00",
-   "c": "swe",
-   "k": "quiz",
-   "n": 4,
-   "title": "QUIZ 4 - Design Models"
-  },
   {
    "uid": "event-assignment-1913611",
    "d": "2026-10-25",
@@ -594,6 +558,15 @@
    "k": "hw",
    "n": 8,
    "title": "Homework 8"
+  },
+  {
+   "uid": "event-assignment-1929615",
+   "d": "2026-12-02",
+   "t": "22:00",
+   "c": "105",
+   "k": "lab",
+   "n": null,
+   "title": "105LA Computer Assignment 3"
   },
   {
    "uid": "event-assignment-1913580",
