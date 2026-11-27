@@ -1,33 +1,6 @@
 {
- "fetched_at": "2026-11-26T14:07-08:00",
+ "fetched_at": "2026-11-27T13:48-08:00",
  "events": [
-  {
-   "uid": "event-assignment-1913570",
-   "d": "2026-10-27",
-   "t": "23:00",
-   "c": "swe",
-   "k": "other",
-   "n": null,
-   "title": "Lecture 9: Usability Fail/Success"
-  },
-  {
-   "uid": "event-assignment-1948496",
-   "d": "2026-10-27",
-   "t": null,
-   "c": "121",
-   "k": "quiz",
-   "n": 4,
-   "title": "Quiz 4"
-  },
-  {
-   "uid": "event-assignment-1943540",
-   "d": "2026-10-28",
-   "t": "13:00",
-   "c": "140",
-   "k": "other",
-   "n": null,
-   "title": "Discussion Wed 10/28"
-  },
   {
    "uid": "event-assignment-1942535",
    "d": "2026-10-28",
